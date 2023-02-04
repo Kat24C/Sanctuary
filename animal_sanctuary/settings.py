@@ -32,17 +32,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Already linked apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
 
+    # Installed apps
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    # Made apps
+    'animals',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +65,10 @@ ROOT_URLCONF = 'animal_sanctuary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'), 
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
