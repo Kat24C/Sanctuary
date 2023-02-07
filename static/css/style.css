@@ -1,5 +1,6 @@
 body, html {
     height: 100%;
+    width: 100%;
     margin: 0;
     overflow-y: auto;
 }
@@ -15,38 +16,15 @@ body, html {
 /* Animal page background images */
 .gray {
     background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_2834/v1675799492/Sanctuary%20project/background_paw_prints_mbdtg6.jpg');
-    height: 100%;
+    height: auto;
+    background-repeat: repeat;
 }
 
-.wild {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,h_448/v1675796577/Sanctuary%20project/wild_animals_oarchx.jpg');
-    width: auto;
-    height: 33%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50em;
-   
+.center {
+    display: flex;
+    justify-content: center; 
 }
 
-.pets {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,h_489,w_1565/v1675800550/Sanctuary%20project/pets_tc5cxy.jpg');
-    width: auto;
-    height: 33%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50em;
-   
-}
-
-.farm {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_1008/v1675800732/Sanctuary%20project/farm_animals_qnkanc.jpg');
-    width: auto;
-    height: 33%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50em;
-  
-}
 
 .words {
     font-weight: 500;
@@ -56,6 +34,8 @@ body, html {
 .words:hover {
     color:#241803;
 }
+
+
 
 .clr {
     background-color: #b6a786;
