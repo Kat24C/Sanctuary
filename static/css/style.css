@@ -1,0 +1,11 @@
+body {
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1675773227/Sanctuary%20project/Elephants_tngqq7.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.clr {
+    background-color: #A49677;
+}
