@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('sanctuary_home.urls')),
-    # path('', include('animals.urls')),
+    path('', include('animals.urls')),
 ]

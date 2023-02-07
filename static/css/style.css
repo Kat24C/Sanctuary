@@ -1,11 +1,87 @@
-body {
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+}
+/* Home page background image */
+.bg-image {
     background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1675773227/Sanctuary%20project/Elephants_tngqq7.jpg');
+    height: 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: fix;
+
+}
+
+/* Animal page background images */
+.gray {
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_2834/v1675799492/Sanctuary%20project/background_paw_prints_mbdtg6.jpg');
+    height: 100%;
+}
+
+.wild {
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,h_448/v1675796577/Sanctuary%20project/wild_animals_oarchx.jpg');
+    width: auto;
+    height: 33%;
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 50em;
+   
+}
+
+.pets {
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,h_489,w_1565/v1675800550/Sanctuary%20project/pets_tc5cxy.jpg');
+    width: auto;
+    height: 33%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50em;
+   
+}
+
+.farm {
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_1008/v1675800732/Sanctuary%20project/farm_animals_qnkanc.jpg');
+    width: auto;
+    height: 33%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50em;
+  
+}
+
+.words {
+    font-weight: 500;
+    color:#476404;
+}
+
+.words:hover {
+    color:#241803;
 }
 
 .clr {
-    background-color: #A49677;
+    background-color: #b6a786;
+}
+
+h1 {
+    color:#a17306;
+}
+
+h3 {
+    color:#9febd8;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
+.meet-animal {
+    background-image: linear-gradient(90deg, #e9d59f 0%, #e7e690 35%, #c6e67c 100%);
+    width: 18rem;
+    
+}
+
+@media (max-width: 667px ) {
+    .container {
+        max-width: 80%;
+    }
+
+    .head {
+        font-size: 200%;
+    }
 }

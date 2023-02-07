@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid gray">
+    <div class="text-center">
+        <h1 class="head">Animals</h1>
+    </div>
+    <div class="wild"></div>
+        <a class="words" href="{% url 'wild_animals' %}"><h4 class="text-center"><i class="fa-sharp fa-solid fa-forward-step"></i>  Wild Animals</h4></a>
+    
+    <div class="farm"> </div>
+        <a class="words" href="{% url 'farm_animals' %}"><h4 class="text-center"><i class="fa-sharp fa-solid fa-forward-step"></i> Farm Animals</h4></a>
+    <div class="pets"></div>
+    <a class="words" href="{% url 'pets' %}"><h4 class="text-center"><i class="fa-sharp fa-solid fa-forward-step"></i> Pets</h4></a> 
+</div>
+{% endblock %}
