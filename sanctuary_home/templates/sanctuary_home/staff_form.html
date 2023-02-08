@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+<h1>Update Mission Statement</h1>
+<br/>
+<div class="container-fluid">
+
+   <form action="" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Edit" class="btn-signup">
+   </form>
+ 
+</div>
+{% endblock %}

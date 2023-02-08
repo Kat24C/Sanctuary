@@ -17,3 +17,7 @@ def animal_home_pg(request):
     }
 
     return render(request, 'sanctuary_home/index.html', context)
+
+
+def edit_mission(request):
+    return render(request, 'sanctuary_home/staff_form.html')

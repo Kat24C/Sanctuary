@@ -13,16 +13,19 @@
                 <p class=""> {{ info.description }} </p>
         </div>
         {% endfor %}
-        <div>
-        
-            <h3>How can you help</h3>
-                <p class=""> To ........... </p>
-        </div>
         <div class="meet-animal">
                 <a href="{% url 'animals' %}" class="btn">
                 <i class="fa-solid fa-paw"> Come meet the animals</i>
             </a>
         </div>
+    </br>
+        {% if request.user.is_superuser %}
+        <div class="mission">
+            <a href="{% url 'edit_mission' %}" class="btn">
+                <i class="fa-solid fa-user-pen"> Edit the statements</i>
+            </a>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

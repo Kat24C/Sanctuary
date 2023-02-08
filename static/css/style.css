@@ -33,6 +33,11 @@ h3 {
     width: 18rem; 
 }
 
+.mission {
+    background-image: linear-gradient(90deg, #c47171 0%, #a33501 35%, #e45f13 100%);
+    width: 18rem;
+}
+
 /* navbar */
 
 a {
@@ -61,6 +66,7 @@ a {
     color:#241803;
 }
 
+/* Edit the mission statement */
 
 @media (max-width: 667px ) {
     .container {
