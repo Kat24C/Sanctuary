@@ -7,11 +7,14 @@
     <h1 class="head">Sanctuary for all animals</h1>
     </div>
     <div class="container">
+        {% for info in sanctuary %}
         <div>
-            <h3>Our mission</h3>
-                <p class=""> To ........... </p>
+            <h3>{{ info.name }}</h3>
+                <p class=""> {{ info.description }} </p>
         </div>
+        {% endfor %}
         <div>
+        
             <h3>How can you help</h3>
                 <p class=""> To ........... </p>
         </div>

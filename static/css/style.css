@@ -4,13 +4,39 @@ body, html {
     margin: 0;
     overflow-y: auto;
 }
+
+/* Fonts */
+.clr {
+    background-color: #bd8564;
+    height: 3em;
+}
+
+h1 {
+    color:#e9c77e;
+}
+
+h3 {
+    color:#9febd8;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
 /* Home page background image */
 .bg-image {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1675773227/Sanctuary%20project/Elephants_tngqq7.jpg');
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,h_1078,w_1920/v1675805709/Sanctuary%20project/Elephants_tngqq7.jpg');
     height: 100%;
     background-repeat: no-repeat;
     background-size: fix;
+}
 
+.meet-animal {
+    background-image: linear-gradient(90deg, #e9d59f 0%, #e7e690 35%, #c6e67c 100%);
+    width: 18rem; 
+}
+
+/* navbar */
+
+a {
+    color: rgb(6, 68, 4);
 }
 
 /* Animal page background images */
@@ -35,26 +61,6 @@ body, html {
     color:#241803;
 }
 
-
-
-.clr {
-    background-color: #b6a786;
-}
-
-h1 {
-    color:#a17306;
-}
-
-h3 {
-    color:#9febd8;
-    font-family: Geneva, Tahoma, sans-serif;
-}
-
-.meet-animal {
-    background-image: linear-gradient(90deg, #e9d59f 0%, #e7e690 35%, #c6e67c 100%);
-    width: 18rem;
-    
-}
 
 @media (max-width: 667px ) {
     .container {
