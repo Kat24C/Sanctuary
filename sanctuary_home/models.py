@@ -15,3 +15,6 @@ class HomePage(models.Model):
 
     def __str__(self):
         return self.name
+
+    def edit_link(self):
+        return reverse("edit_mission", kwargs={"pk": self.pk})
