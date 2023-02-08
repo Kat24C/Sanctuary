@@ -8,4 +8,4 @@ class Home(admin.ModelAdmin):
     Admin access to models.py to update mission statement
     and how you can help.
     """
-    list_display = ('name', 'description', 'date')
+    list_display = ('heading', 'statement', 'date')

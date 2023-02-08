@@ -6,7 +6,7 @@ class MissionForm(forms.ModelForm):
     class Meta:
         model = HomePage
         fields = (
-            'name',
-            'description',
+            'heading',
+            'statement',
             'date',
         )
