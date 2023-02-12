@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block content %}
-<div class="bg-image">
+<div class="container-fluid bg-image">
     <div class="text-center">
     <h1 class="head">Sanctuary for all animals</h1>
     </div>
-    <div class="container">
+    <div>
         {% for info in sanctuary %}
         <div>
             <h3>{{ info.heading }}</h3>

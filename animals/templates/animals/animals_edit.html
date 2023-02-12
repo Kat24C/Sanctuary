@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- Form to update -->
+<h1>Update Animal</h1>
+<br/>
+<div class="container1 indi">
+
+   <form action="" method="POST">
+      {% csrf_token %}
+      {{ pet_edit }}
+      <input type="submit" value="Edit" class="btn-signup">
+   </form>
+ 
+</div>
+
+{% endblock content %}

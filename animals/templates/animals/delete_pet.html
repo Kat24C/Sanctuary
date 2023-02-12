@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- Asking the question to delete instead of just deleting -->
+<h1>Delete Recipe</h1>
+<br/>
+<div class="container puro">
+   
+   <form method="POST" style="margin-top: 1.3em;">
+      {% csrf_token %}
+      <h1> Are you sure you want to delete? </h1>
+      <input type="submit" value="Delete" class="btn-sign"></input>
+      <button  class="btn-signs"><a href="{% url 'animal_outline' %}">No go back</a></button>
+          
+   </form>
+</div>   
+
+{% endblock content %}
