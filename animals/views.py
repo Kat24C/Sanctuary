@@ -1,6 +1,7 @@
 from django.shortcuts import render, Http404, get_object_or_404, redirect, reverse
 from . import models
 from django.views import generic, View
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .forms import PetDetails
 from django.contrib import messages
@@ -14,6 +15,7 @@ class PetInfo(generic.ListView):
 
 def animal_outline(request):
     pets = models.AboutTheAnimal.objects.all()
+
     context = {
         'pets': pets,
     }
@@ -77,7 +79,8 @@ details of {pet.animals_name}')
             return redirect(reverse('animal_outline'))
     else:
         pet_edit = PetDetails(instance=pet)
-        messages.info(request, f'You are changing the details of {pet.animals_name}')
+        messages.info(request, f'You are changing the \
+details of {pet.animals_name}')
 
     context = {
         'pet': pet,

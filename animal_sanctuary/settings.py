@@ -50,10 +50,14 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'phonenumber_field',
 
     # Made apps
     'animals',
-    'sanctuary_home'
+    'sanctuary_home',
+    'donations',
+    'profiles',
+    'adoption',
 ]
 
 MIDDLEWARE = [

@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
@@ -7,7 +7,9 @@
 {% block content %}
 <h1>{% trans "Sign Out" %}</h1>
 
+<div class="text-center container .blue-i">
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
+
 
 <form method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
@@ -16,6 +18,7 @@
   {% endif %}
   <button type="submit">{% trans 'Sign Out' %}</button>
 </form>
-
+</div>
 
 {% endblock %}
+
