@@ -72,19 +72,10 @@
                                 {% endif %}
                             </div>
                         </li>
-                  <form method="GET" action="{% url 'animal_outline' %}">
-                    <input
-                      type="search"
-                      class="form-control rounded"
-                      placeholder="Search"
-                      aria-label="text"
-                      aria-describedby="s"/>
-                      <button class="" type="submit">
-                          <span class="icon">
-                              <i class="fas fa-search"></i>
-                          </span>
-                      </button>
-                  </form>
+                        <form class="form-inline my-2 my-lg-0" action="{% url 'animal_outline' %}" method="get">
+                          <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"><i class="fas fa-search"></i></button>
+                        </form>
               </div>
             </nav>
           </div>
