@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('sanctuary_home.urls')),
     path('animals/', include('animals.urls')),
     path('profile/', include('profiles.urls')),
+    path('adoption/', include('adoption.urls')),
 ]
