@@ -21,7 +21,6 @@ class ProfileForm(forms.ModelForm):
             'town_or_city': 'Town or City',
             'county': 'County',
             'postcode': 'Postcode',
-            'country': 'country',
         }
 
         for field in self.fields:

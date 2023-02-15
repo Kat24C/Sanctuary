@@ -55,8 +55,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Donation</a>
                 </li>
-                <li class="nav-item">
-                        <li class="list-inline-item dropdown">
+                        <li class="nav-item list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <p class="my-0"> My Profile <i class="fa-regular fa-list-dropdown"></i> </p>
@@ -72,7 +71,7 @@
                                 {% endif %}
                             </div>
                         </li>
-                        <form class="form-inline my-2 my-lg-0" action="{% url 'animal_outline' %}" method="get">
+                        <form class="form-inline justify-content-end my-2 my-lg-0" action="{% url 'animal_outline' %}" method="get">
                           <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"><i class="fas fa-search"></i></button>
                         </form>

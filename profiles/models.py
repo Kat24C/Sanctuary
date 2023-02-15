@@ -14,7 +14,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=40, null=True, blank=True)
     surname = models.CharField(max_length=40, null=True, blank=True)
-    phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     street_address1 = models.CharField(max_length=50, null=True, blank=True)
     street_address2 = models.CharField(max_length=50, null=True, blank=True)
     town_or_city = models.CharField(max_length=40, null=True, blank=True)
@@ -23,12 +23,5 @@ class Profile(models.Model):
     country = CountryField(blank_label='Country', null=True, blank=True)
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
-
-@receiver(post_save, sender=User)
-def create_profile(sender, instance, created, **kwargs):
-    try:
-        instance.profile.save()
-    except ObjectDoesNotExist:
-        Profile.objects.create(user=instance)

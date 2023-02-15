@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('sanctuary_home.urls')),
-    path('', include('animals.urls')),
-    path('', include('profiles.urls')),
+    path('animals/', include('animals.urls')),
+    path('profile/', include('profiles.urls')),
 ]
