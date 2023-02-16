@@ -7,13 +7,13 @@ from django.views import generic, View
 
 # Create your views here.
 class AdoptionInfo(generic.ListView):
-    model = models.AdoptionQuestions
+    model = models.AdoptionQuestion
     template_name = 'adoption/adoption_form.html'
     context_object_name = 'pet_adoption'
 
 
 def adoption(request):
-    adoption = models.AdoptionQuestions.objects.all()
+    adoption = models.AdoptionQuestion.objects.all()
     form = AdoptionDetails(request.POST)
     context = {
         'adoption': adoption,

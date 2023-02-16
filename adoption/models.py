@@ -22,15 +22,14 @@ Place = (
 )
 
 
-class AdoptionQuestions(models.Model):
+class AdoptionQuestion(models.Model):
     """
     A user profile model for maintaining information.
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     perspective_pet_parent = models.CharField(max_length=40, null=True,
                                               blank=True)
     User_email = models.EmailField(max_length=70, blank=True, unique=True)
-    other_pets = models.CharField(max_length=3,
+    other_pets = models.CharField(max_length=10,
                                   choices=YesNo,
                                   blank=True)
     please_give_details = models.TextField(max_length=400)

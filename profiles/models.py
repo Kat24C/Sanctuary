@@ -19,7 +19,8 @@ class Profile(models.Model):
     town_or_city = models.CharField(max_length=40, null=True, blank=True)
     county = models.CharField(max_length=50, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
-    country = CountryField(blank_label='Ireland', default='Ireland', blank=True)
+    country = CountryField(blank_label='IE', default='IE',
+                           blank=True)
 
     def __str__(self):
         return self.user.username
