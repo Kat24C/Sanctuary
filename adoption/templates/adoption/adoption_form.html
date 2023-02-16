@@ -4,7 +4,13 @@
 {% block content %}
 <div class="container-fluid gray">
     <div class="text-center">
-        <h1 class="head">Please work</h1>
+        <h1 class="head"></h1>
+        <form class="mt-3" action="{% url 'adoption' %}" method="POST" id="profile-update-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+  
+            <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+        </form>
     </div>
 </div>
 {% endblock %}

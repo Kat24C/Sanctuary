@@ -3,29 +3,22 @@
 
 {% block content %}
 <div class="container-fluid bg-image">
-    <div class="text-center">
-    <h1 class="head">Sanctuary for all animals</h1>
+    <div class="text-left">
+    <h1 class="head">Beloved Pet Sanctuary</h1>
     </div>
     <div>
-        {% for info in sanctuary %}
-        <div>
-            <h3>{{ info.heading }}</h3>
-                <p class=""> {{ info.statement }} </p>
-                {% if request.user.is_superuser %}
-                <div class="mission">
-                    <a href="{% url 'edit_mission' info.id %}" class="btn">
-                        <i class="fa-solid fa-user-pen"> Edit the statements</i>
-                    </a>
-                </div>
-                {% endif %}
-        </div>
-        {% endfor %}
-    </br>
-        <div class="meet-animal">
-                <a href="{% url 'animal_outline' %}" class="btn">
-                <i class="fa-solid fa-paw"> Come meet the animals</i>
-            </a>
-        </div>
-      </div>
+        <h2>A safe place for all pets.</h2>
+    </div>
+    <div class="meet-animal">
+        <a href="{% url 'animals_home_pg' %}" class="btn">
+           <i class="fa-solid fa-people-group"></i> What to know more about us?
+    </a>
+    </div>
+</br>
+    <div class="meet-animal">
+        <a href="{% url 'animal_outline' %}" class="btn">
+            <i class="fa-solid fa-paw"></i> Come meet the animals
+        </a>
+    </div>
 </div>
 {% endblock %}

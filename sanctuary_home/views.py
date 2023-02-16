@@ -6,9 +6,13 @@ from .forms import MissionForm
 from django.contrib import messages
 
 
+def home_pg(request):
+    return render(request, 'sanctuary_home/index.html')
+
+
 class SanctuaryInfo(generic.ListView):
     model = models.HomePage
-    template_name = 'index.html'
+    template_name = 'about.html'
     context_object_name = 'sanctuary'
 
 
@@ -18,7 +22,7 @@ def animal_home_pg(request):
         'sanctuary': sanctuary,
     }
 
-    return render(request, 'sanctuary_home/index.html', context)
+    return render(request, 'sanctuary_home/about.html', context)
 
 
 @login_required
