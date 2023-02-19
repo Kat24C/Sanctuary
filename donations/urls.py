@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.donations, name='donations'),
-    path('success/', views.success, name='success'),
+    path('donation_payment', views.donation_payment, name='donation_payment'),
+    path('success/<str:args>', views.success, name='success'),
 ]

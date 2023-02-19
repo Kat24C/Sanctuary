@@ -1,31 +1,41 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.urls import reverse
-from .models import UserDonation
+
 import stripe
 
 
 # Create your views here.
 def donations(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY
+    return render(request, 'donations/donation.html')
 
-    donation = UserDonation.objects.all()
+
+def donation_payment(request):
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    if request.method == 'POST':
+        amount = int(request.POST['amount'])
+        charge = stripe.Charge.create(
+            amount=amount*100,
+            currency="gpb",
+            description="donation",
+        )
+
     session = stripe.checkout.Session.create(
         payment_method_types=['card'],
         line_items=[
-            {"price": "price_1McvzzLSo0dYutjcSSSQo0TS", "quantity": 1},
+            {"amount": amount,
+             "quantity": 1},
         ],
-        mode="subscription",
-        success_url="https://8000-kat24c-sanctuary-t3ec7b7nwuf.ws-eu87.gitpod.io/donations/success",
+        mode="payment",
+        success_url="https://8000-kat24c-sanctuary-t3ec7b7nwuf.ws-eu87.gitpod.io/donations/success/",
         cancel_url="https://8000-kat24c-sanctuary-t3ec7b7nwuf.ws-eu87.gitpod.io/sanctuary_home/index",
     )
 
     context = {
-        'donation': donation,
         'session_id': session.id,
-        'stripe_public_key': settings.STRIPE_PUBLIC_KEY
+        'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
     }
-    return render(request, 'donations/donation.html',   context)
+    return render(request, 'donations/donation.html', context)
 
 
 def success(request, args):
