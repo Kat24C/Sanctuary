@@ -19,8 +19,6 @@
               <option value="20">Donate £20 towards a warm bed.</option>
               <option value="30">Donate £30 towards a heating.</option>
             </select>
-        <a href="https://buy.stripe.com/test_5kAdTwdtW6fY6k0dQR">Make a payment</a>
-
         <fieldset class="px-3">
         <label for="card-element">
           <legend class="fieldset-label small text-black px-2 w-auto">Credit or debit card</legend>
@@ -28,7 +26,7 @@
           <!-- A Stripe card element will go here -->
           <div class="mb-3" id="card-element"></div>
           <!-- Used to display form errors -->
-          <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+          <div class="mb-3" id="card-errors" role="alert"></div>
           <!-- Pass the client secret to the view so we can get the payment intent id -->
           <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 <button id="submit">Donate</button>
