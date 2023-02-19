@@ -7,8 +7,12 @@ from django.db.models.signals import post_save
 # Create your models here.
 class UserDonation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    donation_amount = models.DecimalField(max_digits=10,
+                                         decimal_places=2,
+                                         null=False,
+                                         default=0)
     payment_bool = models.BooleanField(default=False)
-    stripe_checkout = models.CharField(max_length=250)
+    stripe_pd = models.CharField(max_length=250)
 
 
 @receiver(post_save, sender=User)

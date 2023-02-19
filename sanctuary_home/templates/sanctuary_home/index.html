@@ -2,23 +2,46 @@
 {% load static %}
 
 {% block content %}
+
 <div class="container-fluid bg-image">
-    <div class="text-left">
-    <h1 class="head">Beloved Pet Sanctuary</h1>
-    </div>
-    <div>
-        <h2>A safe place for all pets.</h2>
-    </div>
-    <div class="meet-animal">
-        <a href="{% url 'animals_home_pg' %}" class="btn">
-           <i class="fa-solid fa-people-group"></i> Want to know more about us?
-    </a>
-    </div>
+	<div class="text-left">
+		<h1 class="head">Beloved Pet Sanctuary</h1>
+	</div>
+	<div>
+		<h2>A safe place for all pets.</h2>
+	</div>
+	<div class="meet-animal">
+		<a href="{% url 'animals_home_pg' %}" class="btn">
+			<i class="fa-solid fa-people-group"></i> Want to know more about us?
+    
+		</a>
+	</div>
 </br>
-    <div class="meet-animal">
-        <a href="{% url 'animal_outline' %}" class="btn">
-            <i class="fa-solid fa-paw"></i> Come meet the animals
-        </a>
-    </div>
+<div class="meet-animal">
+	<a href="{% url 'animal_outline' %}" class="btn">
+		<i class="fa-solid fa-paw"></i> Come meet the animals
+        
+	</a>
+</div>
+<footer class="fixed-bottom mt-0 text-center">
+	<div class="col-lg-12 col-md-6 mt-0">
+		<ul>
+			<li class="d-inline p-3">
+				<a class="link-success" href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Link takes you to our facebook page, it opens in a new tab">Facebook 
+					<i class="fa-brands fa-facebook"></i>
+				</a>
+			</li>
+			<li class="d-inline p-3">
+				<a href="http://www.instagram.com" target="_blank" rel="noopener" aria-label="Link takes you to instagram, it opens in a new tab">instagram 
+					<i class="fa-brands fa-instagram"></i>
+				</a>
+			</li>
+			<li class="d-inline p-3">
+				<a href="http://www.twitter.com" target="_blank" rel="noopener" aria-label="Link takes you to twitter, it opens in a new tab">Twitter 
+					<i class="fa-brands fa-twitter"></i>
+				</a>
+			</li>
+		</ul>
+	</footer>
 </div>
 {% endblock %}

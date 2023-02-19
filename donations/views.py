@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.urls import reverse
+from .models import UserDonation
 import stripe
 
 
@@ -8,6 +9,7 @@ import stripe
 def donations(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
+    donation = UserDonation.objects.all()
     session = stripe.checkout.Session.create(
         payment_method_types=['card'],
         line_items=[
@@ -19,10 +21,11 @@ def donations(request):
     )
 
     context = {
+        'donation': donation,
         'session_id': session.id,
         'stripe_public_key': settings.STRIPE_PUBLIC_KEY
     }
-    return render(request, 'donations/donation.html')
+    return render(request, 'donations/donation.html',   context)
 
 
 def success(request, args):
