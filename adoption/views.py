@@ -36,7 +36,7 @@ def adoption(request):
                 return HttpResponse('Invalid form, Adoption form was not sent')
             messages.success(request, "Adoption form sent, \
                  we will get back to you soon.")
-            return redirect("sanctuary_home/index.html")
+            return redirect('home_pg')
 
     form = AdoptionDetails()
     return render(request, 'adoption/adoption_form.html', {'form': form})
