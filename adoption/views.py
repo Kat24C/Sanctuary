@@ -27,10 +27,7 @@ def adoption(request):
         form = AdoptionDetails(request.POST)
         if form.is_valid():
             subject = "Adoption Details"
-            message = {
-                'form': form,
-                'adoption': adoption,
-            }
+            message = "hello"
 
             try:
                 send_mail(subject, message, 'ForProjectsKC@gmail.com',
