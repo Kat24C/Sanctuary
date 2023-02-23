@@ -32,6 +32,10 @@ h3 {
     font-family: Geneva, Tahoma, sans-serif;
 }
 
+table {
+    overflow-x: auto;
+}
+
 /* Home page background image */
 .bg-image {
     background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_1834/v1676208687/animal_tuoiy9.jpg');
@@ -55,9 +59,6 @@ h3 {
 
 /* navbar */
 
-a {
-    color: rgb(6, 68, 4);
-}
 
 /* Animal page background images */
 .gray {
@@ -132,5 +133,10 @@ footer {
 
     .head {
         font-size: 200%;
+    }
+
+    table {
+        text-size-adjust: smaller;
+        justify-content: flex-start;
     }
 }

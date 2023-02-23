@@ -8,7 +8,7 @@ TypesOfAnimals = (
     ("DOG", 'Dog'),
     ("RABBIT", 'Rabbit'),
     ("GUINEA PIGS", 'Guinea pigs'),
-    ("BIRDS", ' BIRDS'),
+    ("BIRDS", ' Birds'),
 )
 
 

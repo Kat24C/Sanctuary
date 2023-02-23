@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container-fluid gray">
     <div class="text-center">
-        <h1 class="head">Tell us more</h1>
+        <h1>Tell us more</h1>
         <h3 class="text-dark">What type of pet are you looking for?</h3>
         <form class="mt-3" action="{% url 'adoption' %}" method="POST" id="adoption-form">
             {% csrf_token %}
