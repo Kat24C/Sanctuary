@@ -32,7 +32,7 @@ class AdoptionQuestion(models.Model):
     other_pets = models.CharField(max_length=10,
                                   choices=YesNo,
                                   blank=True)
-    please_give_details = models.TextField(max_length=400)
+    please_give_details = models.TextField(max_length=400, blank=True)
     what_type_of_pet = models.CharField(max_length=11,
                                         choices=TypesOfPets,
                                         blank=True)

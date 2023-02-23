@@ -1,9 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from . import models
+from django.contrib.auth.models import User
 from .forms import AdoptionDetails
 from django.contrib import messages
+from django.core.mail import BadHeaderError
 from django.views import generic, View
+from django.conf import settings
+from django.http import HttpResponse
+from django.core.mail import EmailMultiAlternatives
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -17,10 +23,23 @@ class AdoptionInfo(generic.ListView):
 @login_required
 def adoption(request):
     adoption = models.AdoptionQuestion.objects.all()
-    form = AdoptionDetails(request.POST)
-    context = {
-        'adoption': adoption,
-        'form': form,
-    }
+    if request.method == 'POST':
+        form = AdoptionDetails(request.POST)
+        if form.is_valid():
+            subject = "Adoption Details"
+            message = {
+                'form': form,
+                'adoption': adoption,
+            }
 
-    return render(request, 'adoption/adoption_form.html', context)
+            try:
+                send_mail(subject, message, 'ForProjectsKC@gmail.com',
+                          ['ForProjectsKC@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid form, Adoption form was not sent')
+            messages.success(request, "Adoption form sent, \
+                 we will get back to you soon.")
+            return redirect("sanctuary_home/index.html")
+
+    form = AdoptionDetails()
+    return render(request, 'adoption/adoption_form.html', {'form': form})
