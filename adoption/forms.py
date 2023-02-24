@@ -6,3 +6,4 @@ class AdoptionDetails(forms.ModelForm):
     class Meta:
         model = AdoptionQuestion
         fields = '__all__'
+

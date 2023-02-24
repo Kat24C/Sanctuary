@@ -22,8 +22,6 @@ body, html{
 }
 
 h1 {
-    padding-top: 2em;
-    border-top: 5rem;
     color:#084e0e;
 }
 
@@ -36,15 +34,23 @@ table {
     overflow-x: auto;
 }
 
+/* Sign-up and Login background */
+.pet-print {
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,dn_190,o_32,w_4020/v1677270858/Sanctuary%20project/prints_mvslfo.jpg');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Home page background image */
 .bg-image {
     background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_1834/v1676208687/animal_tuoiy9.jpg');
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-color: rgb(165, 200, 240);
-    border: 2px solid #080103;
 }
 
 .meet-animal {
@@ -57,14 +63,20 @@ table {
     width: 18rem;
 }
 
-/* navbar */
-
 
 /* Animal page background images */
 .gray {
     background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_2834/v1675799492/Sanctuary%20project/background_paw_prints_mbdtg6.jpg');
     width: 100%;
     height: 150%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pet-pic {
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1677270026/Sanctuary%20project/animals_yaikmx.jpg');
+    width: 80%;
+    height: 80%;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -95,9 +107,11 @@ table {
 
 /* Messages */
 .messages {
+    background: none;
     color: #422e9d;
     text-align: center;
-    font-size: x-large;
+    padding-top: 2%;
+    font-size: medium;
 }
 
 .timer {

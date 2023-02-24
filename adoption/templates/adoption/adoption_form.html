@@ -6,17 +6,38 @@
     <div class="container text-center">
         <h1>Tell us more</h1>
         <h3 class="text-dark">What type of pet are you looking for?</h3>
-        <form class="mt-3" action="{% url 'adoption' %}" method="POST" id="adoption-form">
-            <div class="form-group">
+        <form action="{% url 'adoption' %}" method="POST" id="adoption-form">
+            <table>
                 {% csrf_token %}
-                <h5>Perspective pet parents name: {{ form.perspective_pet_parent }}</h5>
-                <h5>Your email: {{ form.User_email }}</h5>
-                <h5>Do you have any other pets: {{ form.other_pets }}</h5>
-                <h5>Please tell us about them:<p>{{ form.please_give_details }}</p></h5>
-                <h5>What type of pet are you looking for: {{ form.what_type_of_pet }}</h5>
-                <h5>Describe the pet you want: <p>{{ form.pet_you_want }}</p></h5>
-                <h5>Where will the pet be kept: {{ form.where_will_the_pet }}</h5>
-            </div>
+                    <tr>
+                        <th class="pb-3">Perspective pet parents name: </th>
+                        <td class="pb-3">{{ form.perspective_pet_parent }}</td>
+                    </tr>
+                    <tr>
+                        <th class="pb-3">Your email:</th>
+                        <td class="pb-3">{{ form.User_email }}</td>
+                    </tr>
+                    <tr>
+                        <th class="pb-3">Do you have any other pets: </th>
+                        <td class="pb-3">{{ form.other_pets }}</td>
+                    </tr>
+                    <tr>
+                        <th class="pb-3" >Please tell us about them: </th>
+                        <td class="pb-3">{{ form.please_give_details }}</td>
+                    </tr>
+                    <tr>
+                        <th class="pb-3">What type of pet are you looking for: </th>
+                        <td class="pb-3">{{ form.what_type_of_pet }}</td>
+                    </tr>
+                    <tr>
+                        <th class="pb-3">Describe the pet you want: </th>
+                        <td class="pb-3">{{ form.please_give_details }}</td>
+                    </tr>
+                    <tr>
+                        <th class="pb-3">Where will the pet be kept: </th>
+                        <td class="pb-3">{{ form.where_will_the_pet }}</td>
+                    </tr>  
+            </table>
             <button type="submit" class="btn-primary">Send Email</button>
         </form>
     </div>

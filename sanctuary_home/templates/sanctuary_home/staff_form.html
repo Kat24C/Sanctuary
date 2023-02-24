@@ -2,13 +2,12 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<div class="container-fluid gray text-center">
 <h1>Update Mission Statement</h1>
 <br/>
-<div class="container-fluid">
-
    <form action="" method="POST">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ form|crispy }}
       <input type="submit" value="Edit" class="btn-signup">
    </form>
  

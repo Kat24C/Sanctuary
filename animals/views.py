@@ -15,7 +15,6 @@ class PetInfo(generic.ListView):
 
 def animal_outline(request):
     pets = models.AboutTheAnimal.objects.all()
-    
     query = None
 
     if request.GET:
@@ -24,7 +23,7 @@ def animal_outline(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('pet_info'))
-            
+
             queries = Q(type_of_animal__icontains=query)
             pets = pets.filter(queries)
 
