@@ -1,7 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from . import models
-from django.contrib.auth.models import User
 from .forms import AdoptionDetails
 from django.contrib import messages
 from django.core.mail import BadHeaderError
@@ -10,6 +8,10 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.core.mail import EmailMultiAlternatives
 from django.core.mail import send_mail
+
+from . import models
+from profiles.models import Profile
+from profiles.forms import ProfileForm
 
 
 # Create your views here.
@@ -23,14 +25,19 @@ class AdoptionInfo(generic.ListView):
 @login_required
 def adoption(request):
     adoption = models.AdoptionQuestion.objects.all()
+    profile = Profile.objects.all()
     if request.method == 'POST':
         form = AdoptionDetails(request.POST)
         if form.is_valid():
+            profileform = ProfileForm(request.POST)
             subject = "Adoption Details"
             adoption = {
                 'perspective_pet_parent': form.cleaned_data['perspective_pet_parent'],
+                'phone_number': form.cleaned_data['phone_number'],
                 'User_email': form.cleaned_data['User_email'],
-                'other_petst': form.cleaned_data['other_pets'],
+                'town_or_city': form.cleaned_data['town_or_city'],
+                'county': form.cleaned_data['county'],
+                'other_pets': form.cleaned_data['other_pets'],
                 'please_give_details': form.cleaned_data['please_give_details'],
                 'what_type_of_pet': form.cleaned_data['what_type_of_pet'],
                 'pet_you_want': form.cleaned_data['pet_you_want'],
@@ -50,3 +57,12 @@ def adoption(request):
     form = AdoptionDetails()
     return render(request, 'adoption/adoption_form.html', {'form': form})
 
+#    first_name = models.CharField(max_length=40, null=True, blank=True)
+#   surname = models.CharField(max_length=40, null=True, blank=True)
+#    phone_number = PhoneNumberField(blank=True, unique=True)
+#    street_address1 = models.CharField(max_length=150, null=True, blank=True)
+#    street_address2 = models.CharField(max_length=150, null=True, blank=True)
+#    town_or_city = models.CharField(max_length=40, null=True, blank=True)
+#    county = models.CharField(max_length=50, null=True, blank=True)
+#    postcode = models.CharField(max_length=20, null=True, blank=True)
+#    country =
