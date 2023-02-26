@@ -45,6 +45,10 @@ def adoption(request):
                 return HttpResponse('Invalid form, Adoption form was not sent')
                 messages.success(request, "Adoption form sent, \
                 we will get back to you soon.")
-            return redirect("success.html")
+            return redirect("adoption_sent")
     form = AdoptionDetails()
     return render(request, 'adoption/adoption_form.html', {'form': form})
+
+
+def adoption_sent(request):
+    return render(request, 'adoption/success.html')
