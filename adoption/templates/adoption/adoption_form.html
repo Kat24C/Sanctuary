@@ -7,37 +7,8 @@
         <h1 class="pt-3">Tell us more</h1>
         <h3 class="text-dark">What type of pet are you looking for?</h3>
         <form action="{% url 'adoption' %}" method="POST" id="adoption-form">
-            <table>
                 {% csrf_token %}
-                    <tr>
-                        <th class="pb-3">Perspective pet parents name: </th>
-                        <td class="pb-3">{{ form.perspective_pet_parent }}</td>
-                    </tr>
-                    <tr>
-                        <th class="pb-3">Your email:</th>
-                        <td class="pb-3">{{ form.User_email }}</td>
-                    </tr>
-                    <tr>
-                        <th class="pb-3">Do you have any other pets: </th>
-                        <td class="pb-3">{{ form.other_pets }}</td>
-                    </tr>
-                    <tr>
-                        <th class="pb-3" >Please tell us about them: </th>
-                        <td class="pb-3">{{ form.please_give_details }}</td>
-                    </tr>
-                    <tr>
-                        <th class="pb-3">What type of pet are you looking for: </th>
-                        <td class="pb-3">{{ form.what_type_of_pet }}</td>
-                    </tr>
-                    <tr>
-                        <th class="pb-3">Describe the pet you want: </th>
-                        <td class="pb-3">{{ form.please_give_details }}</td>
-                    </tr>
-                    <tr>
-                        <th class="pb-3">Where will the pet be kept: </th>
-                        <td class="pb-3">{{ form.where_will_the_pet }}</td>
-                    </tr>  
-            </table>
+                {{ form.as_p }}
             <button type="submit" class="btn-primary">Send Email</button>
         </form>
     </div>
