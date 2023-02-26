@@ -5,15 +5,6 @@ body, html{
     overflow-y: auto;
 }
 
-.container1 {
-    max-width: 800px;
-    width: 100%;
-    padding-top: 1%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
 
 /* Fonts */
 .clr {
@@ -23,6 +14,7 @@ body, html{
 
 h1 {
     color:#084e0e;
+    padding-top: 5px;
 }
 
 h3 {
@@ -50,7 +42,8 @@ table {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(165, 200, 240);
+    background-color: rgb(2, 42, 88);
+    margin-top: -20px;
 }
 
 .meet-animal {
@@ -129,6 +122,12 @@ table {
     100% {opacity: 0;}
 }
 
+/* mailchimp */
+#mc_embed_signup{
+    background:#fff;
+    clear:left;
+    font:14px Helvetica,Arial,sans-serif;
+    width:600px;}
 
 /* footer and social network links */
 footer {
@@ -138,8 +137,19 @@ footer {
 
 
 
-/* Edit the mission statement */
+/* Change of media screen */
+@media (max-width: 800px) {
+    .bg-image {
+        background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1677270026/Sanctuary%20project/animals_yaikmx.jpg');
+        width: auto;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgb(2, 42, 88);
+        margin-top: 1rem;
+    }    
 
+}
 @media (max-width: 667px ) {
     .container {
         max-width: 80%;
