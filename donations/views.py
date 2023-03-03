@@ -4,6 +4,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 import stripe
@@ -17,7 +18,7 @@ def donations(request):
     return render(request, 'donations/donations.html')
 
 
-def donation_cancelled(request):
+def cancel(request):
     pass
 
 
@@ -42,4 +43,5 @@ def donation_pay(request):
 
 
 def success(request):
+    messages.success(request, 'Thank you for your donation.')
     return render(request, 'donations/success.html')

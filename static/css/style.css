@@ -155,10 +155,6 @@ footer {
         max-width: 80%;
     }
 
-    .head {
-        font-size: 200%;
-    }
-
     table {
         text-size-adjust: smaller;
         justify-content: flex-start;

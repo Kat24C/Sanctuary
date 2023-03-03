@@ -6,34 +6,35 @@
 {% endblock %}
 
 {% block content %}
-
-<div class="container-fluid text-center prints">
-  <div class="pt-3">
-  <h1 class="text-primary">Please help us by donating</h1>
-
-    <form action="{% url 'donation_pay' %}" method="post" id="payment-form">
-        {% csrf_token %}
-          <select required class="text-info" name="amount" id="amount">
-            <option selected value="">Choose how much you would like to donate</option>
-            <option value="5">5 will help by a bag of tasty food</option>
-            <option value="10">10 will help buy toys and blankies for our friends</option>
-            <option value="15">15 will help buy a nice new bed</option>
-            <option value="20">20 will help keep our friends warm</option>
-            <option value="25">25 will help us with so much things</option>
-          </select>
-          <div class="form-field-6">
-            <input required class="mt-2" type="text" name="name" placeholder="name">
-            <input required type="email" name="email" placeholder="email">
-                <div id="card-element">
-                  <!-- Elements will create input elements here -->
+    <div class="overlay"></div>
+    <div class="container-fluid text-center prints">
+        <div class="container">
+            <h1 class="text-primary">Please help us by donating</h1>
+            <form action="{% url 'donation_pay' %}" method="post" id="payment-form">
+                {% csrf_token %}
+                <select required class="text-info" name="amount" id="amount">
+                    <option selected value="">Choose how much you would like to donate</option>
+                    <option value="5">5 will help by a bag of tasty food</option>
+                    <option value="10">10 will help buy toys and blankies for our friends</option>
+                    <option value="15">15 will help buy a nice new bed</option>
+                    <option value="20">20 will help keep our friends warm</option>
+                    <option value="25">25 will help us with so much things</option>
+                </select>
+                <div class="pt-2">
+                    <input required class="mt-2" type="text" name="name" placeholder="name">
+                    <input required class="mt-2" type="email" name="email" placeholder="email">
                 </div>
-                  <!-- We'll put the error messages in this element -->
-                <div id="card-errors" role="alert"></div>
-                <button>Submit</button>
-          </div>
-    </form>  
-  </div>  
-</div>
+                <div class="pt-2">
+                    <div id="card-element">
+                    <!-- Elements will create input elements here -->
+                    </div>
+                    <!-- We'll put the error messages in this element -->
+                    <div id="card-errors" role="alert"></div>
+                    <button class="mt-2">Submit</button>
+                </div>
+            </form>  
+        </div>  
+    </div>
 
 {% endblock %}
 
@@ -43,60 +44,63 @@
     var elements = stripe.elements();
     var style = {
         base: {
-            color: "#32325d",
+            color: '#32325d',
             fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
             fontSmoothing: 'antialiased',
             fontSize: '16px',
             '::placeholder': {
-                color: '#aab7c4',
+                color: '#aab7c4'
             }
         },
-        invalid: {
+        invalid: { 
             color: '#fa755a',
-            iconColor: '#fa755a', 
+            iconColor: '#fa755a'
         }
     };
 
-    var card = elements.create("card", { style: style });
-    card.mount("#card-element");
-    card.addEventListener('change', function(event) {
-    var displayError = document.getElementById('card-errors');
-    if (event.error) {
-        displayError.textContent = error.message;
-    } else {
-        displayError.textContent = '';
-    }
+    var card = elements.creat('card', {style:style});
+
+    card.mount('#card-element');
+
+    card.addEventListner('change', function(event) {
+        var displayError = document.getElementById('card-errors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
     });
 
     var form = document.getElementById('payment-form');
-    form.addEventListener('submit', function(event) {
+    form.addEventListner('submit', function(event) {
         event.preventDefault();
 
         stripe.createToken(card).then(function(result) {
             if (result.error) {
-                // Inform the user if there was an error
-                var errorElement = document.getElementById('card-errrors');
+                var errorElement = document.getElementById('card-errors');
                 errorElement.textContent = result.error.message;
             } else {
-                // Send the token to your server.
-                stripeTokenHandler(result.token);
+                stripeTokenHandler(result.token)
             }
         });
     });
 
-    // Submit the form with the token ID.
     function stripeTokenHandler(token) {
-        // Insert the token ID into the for so it gets submitted to the server
         var form = document.getElementById('payment-form');
-        var hiddenInput = document.createElement('input')
+        var hiddenInput = document.createElement('input');
         hiddenInput.setAttribute('type', 'hidden');
         hiddenInput.setAttribute('name', 'stripeToken');
         hiddenInput.setAttribute('value', token.id);
         form.appendChild(hiddenInput);
 
-        // submit the form
         form.submit();
     }
+    .fail(function () {
+        // just reload the page, the error will be in django messages
+        location.reload();
+    });
+
+
 </script>
 {% endblock %}
     

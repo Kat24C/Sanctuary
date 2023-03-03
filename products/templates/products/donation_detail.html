@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid gray">
+    <div class="text-center">
+        <h1>Donate</h1>
+    </div>
+    
+    <div class="row">
+        {% for don in product %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 border-0">
+                <img class="card-img-top img-fluid" src="{{ don.image.url }}" alt="{{ don.name }}">
+                <h6 class="text-center">{{ don.description }}</h6>
+                <h6 class="text-center">{{ don.price }}</h6>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
