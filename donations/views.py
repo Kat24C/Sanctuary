@@ -17,15 +17,13 @@ def donations(request, don_id):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     bag = request.session.get('bag', {})
-    donate = get_object_or_404(Product, pk=don_id)
-    total = donate.price
     if not bag:
         messages.error(request, "There's nothing in your bag at the moment")
         return redirect(reverse('products'))
     
     current_bag = bag_contents(request)
     donation = current_bag['total']
-    stripe_total = donation*100
+    stripe_total = 5*100
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,

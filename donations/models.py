@@ -1,5 +1,3 @@
-import uuid
-
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
@@ -24,3 +22,11 @@ class Order(models.Model):
 
     def __str__(self):
         return self.full_name
+
+    def update_total(self):
+        """
+        Update total each time a line item is added,
+        accounting for delivery costs.
+        """
+        self.total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.save()
