@@ -4,8 +4,8 @@ from .webhooks import webhook
 
 urlpatterns = [
     path('', views.donations, name='donations'),
-    path('donation_pay', views.donation_pay, name='donation_pay'),
     path('success', views.success, name='success'),
-    path('cancel', views.cancel, name='cancel'),
+    path('cache_checkout_data/', views.cache_checkout_data, name='cache_checkout_data'),
+    path('wh/', webhook, name='webhook'),
 
 ]

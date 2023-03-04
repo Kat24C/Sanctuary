@@ -2,25 +2,24 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid gray">
-    <div class="text-center">
-        <h1>Animals</h1>
-    </div>
-    
-    <div class="row">
-        {% for pet in pets %}
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0">
-                <img class="card-img-top img-fluid" src="{{ pet.featured_image.url }}" alt="{{ pet.animals_name }}">
-                <h6>Name: {{ pet.animals_name }}</h6>
-                <h6>Type of animal: {{ pet.type_of_animal }}</h6>
-                <a href="{% url 'pet_info' pet.id %}">Know more</a>
-            </div>
-        </div>
-        {% endfor %}
-        {% if user.is_superuser %}
-        <a href="{% url 'add_pet' %}">Add a new pet</a>
-        {% endif %}    
-    </div>
+<div class="overlay"></div>
+    <div class="container-fluid gray">
+        <div class="row">
+            <div class="col text-center mt-2">
+                <h1>Animals</h1>
+                {% for pet in pets %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 border-0">
+                        <img class="card-img-top img-fluid" src="{{ pet.featured_image.url }}" alt="{{ pet.animals_name }}">
+                        <h6>Name: {{ pet.animals_name }}</h6>
+                        <h6>Type of animal: {{ pet.type_of_animal }}</h6>
+                        <a href="{% url 'pet_info' pet.id %}">Know more</a>
+                    </div>
+                    </div>
+                    {% endfor %}
+                    {% if user.is_superuser %}
+                    <a href="{% url 'add_pet' %}">Add a new pet</a>
+                    {% endif %}    
+                </div>
 </div>
 {% endblock %}
