@@ -10,17 +10,8 @@
     <div class="container-fluid text-center prints">
         <div class="container">
             <h1 class="text-primary">Please help us by donating</h1>
-            <form action="{% url 'donation_pay' %}" method="post" id="payment-form">
+            <form action="{% url 'donations' don.id %}" method="post" id="payment-form">
                 {% csrf_token %}
-                <select required class="text-info" name="amount" id="amount">
-                    <option selected value="">Choose how much you would like to donate</option>
-                    <option value="5">5 will help by a bag of tasty food</option>
-                    <option value="10">10 will help buy toys and blankies for our friends</option>
-                    <option value="15">15 will help buy a nice new bed</option>
-                    <option value="20">20 will help keep our friends warm</option>
-                    <option value="25">25 will help us with so much things</option>
-                </select>
-                <div class="pt-2">
                     <input required class="mt-2" type="text" name="name" placeholder="name">
                     <input required class="mt-2" type="email" name="email" placeholder="email">
                 </div>
@@ -43,6 +34,6 @@
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    <script src="{% static 'donations/js/stripe_elements.js' %}"></script>
 {% endblock %}
     
