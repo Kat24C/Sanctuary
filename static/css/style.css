@@ -5,6 +5,15 @@ body, html{
     overflow-y: auto;
 }
 
+header {
+    width: 100%;
+    height: 1em;
+    background-color: #885511;
+    position: relative;
+    margin: 0%;
+}
+
+
 
 /* Fonts */
 .clr {
@@ -14,7 +23,7 @@ body, html{
 
 h1 {
     color:#084e0e;
-    padding-top: 10px;
+    padding-top: 1em;
 }
 
 h3 {
@@ -59,12 +68,12 @@ table {
 .meet-animal {
     background-image: linear-gradient(90deg, #e9d59f 0%, #e7e690 35%, #c6e67c 100%);
     width: 18rem; 
+    margin-left: 6%;
 }
 
 .mission {
     background-image: linear-gradient(90deg, #c0a480 0%, #91877c 35%, #dbb6a0 100%);
-    width: 18rem;
-    margin-left: 30px;
+    width: 16rem;
 }
 
 
@@ -75,6 +84,7 @@ table {
     height: 150%;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: -30px;
 }
 
 .pet-pic {
@@ -108,6 +118,16 @@ table {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Donate page */
+.amount {
+    width: 15rem;
+}
+
+.image {
+    height: 12rem;
+}
+
 
 /* Messages */
 .messages {
@@ -167,7 +187,9 @@ footer {
     }
 
     h1 {
-        padding-top: 0;
+        padding-top: 2;
+        padding: 0;
+        font-size: large;
     }
 
 }
