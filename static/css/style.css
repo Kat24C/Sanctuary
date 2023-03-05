@@ -14,11 +14,11 @@ body, html{
 
 h1 {
     color:#084e0e;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 h3 {
-    color:#9febd8;
+    color:#240174;
     font-family: Geneva, Tahoma, sans-serif;
 }
 
@@ -43,7 +43,17 @@ table {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(2, 42, 88);
-    margin-top: -20px;
+    margin-top: -35px;
+}
+
+.state {
+    width: 20em;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 1px;
+    font-weight: 400;
+    margin-left: 30px;
+    margin-top: 10px;
 }
 
 .meet-animal {
@@ -52,8 +62,9 @@ table {
 }
 
 .mission {
-    background-image: linear-gradient(90deg, #c47171 0%, #a33501 35%, #e45f13 100%);
+    background-image: linear-gradient(90deg, #c0a480 0%, #91877c 35%, #dbb6a0 100%);
     width: 18rem;
+    margin-left: 30px;
 }
 
 
@@ -147,7 +158,17 @@ footer {
         background-size: cover;
         background-color: rgb(2, 42, 88);
         margin-top: 1rem;
-    }    
+    }
+    .state {
+        background-color: rgba(204, 201, 178, 0.4);
+        color: #000000;
+        font-weight: 500;
+        margin-left: 0;
+    }
+
+    h1 {
+        padding-top: 0;
+    }
 
 }
 @media (max-width: 667px ) {

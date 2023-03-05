@@ -8,9 +8,9 @@
     </div>
     <div>
         {% for info in sanctuary %}
-        <div>
+        <div class="state">
             <h3>{{ info.heading }}</h3>
-                <p class=""> {{ info.statement }} </p>
+                <p> {{ info.statement }} </p>
                 {% if request.user.is_superuser %}
                 <div class="mission">
                     <a href="{% url 'edit_mission' info.id %}" class="btn">
