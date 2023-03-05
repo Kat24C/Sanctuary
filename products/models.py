@@ -6,7 +6,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    price = models.IntegerField(default=0)
+    price = models.IntegerField(default=100)
     image = CloudinaryField(null=True, blank=True)
 
     def __str__(self):

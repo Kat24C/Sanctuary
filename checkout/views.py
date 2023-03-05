@@ -27,16 +27,20 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-        
+ 
 
-def donations(request):
+def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+        }
 
-        don_form = DonateForm()
+        don_form = DonateForm(form_data)
         if don_form.is_valid():
             donate = don_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -52,19 +56,21 @@ def donations(request):
 
         current_bag = bag_contents(request)
         total = current_bag['total']
-        stripe_total = 1000
+        stripe_total = total
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency='eur',
         )
+        
+        don_form = DonateForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
 
     context = {
-        'intent': intent,
+        'don_form': don_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }

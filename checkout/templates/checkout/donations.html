@@ -8,19 +8,38 @@
 {% block content %}
 <div class="container pet-print">
     <h1 class="text-center">Donate</h1>
-    <form action="{% url 'donations' %}" method="POST" id="payment-form">
+    {% for item in bag_items %}
+        <div class="row">
+            <div class="col-2 mb-1">
+                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                </a>
+            </div>
+            <div class="col-7">
+                <p class="my-0"><strong>{{ item.product.description }}</strong></p>
+            </div>
+            <div class="col-3 text-right">
+                <p class="my-0 small text-muted">{{ item.product.get_display_price }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
         {% csrf_token %}
-<fieldset class="px-3">
-    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-    <!-- A Stripe card element will go here -->
-    <div class="mb-3" id="card-element"></div>
-    <!-- Used to display form errors -->
-    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-    <!-- Pass the client secret to the view so we can get the payment intent id -->
-    <input type="hidden" value="{{ client_secret }}" name="client_secret">
-    <button>Donate</button>
-</fieldset>
-</form>
+        <fieldset class="rounded px-3 mb-5">
+            <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+            {{ don_form.full_name }}
+            {{ don_form.email }}
+        </fieldset>
+        <fieldset class="px-3">
+            <legend class="fieldset-label small text-black px-2 w-auto"></legend>
+            <!-- A Stripe card element will go here -->
+            <div class="mb-3" id="card-element"></div>
+            <!-- Used to display form errors -->
+            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+            <!-- Pass the client secret to the view so we can get the payment intent id -->
+            <input type="hidden" value="{{ client_secret }}" name="client_secret">
+            <button>Donate</button>
+        </fieldset>
+    </form>
 </div>
 
 {% endblock %}

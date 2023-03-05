@@ -8,8 +8,8 @@ def bag_contents(request):
     total = 0
     bag = request.session.get('bag', {})
 
-    for item in bag.items():
-        if isinstance(item, int):
+    for don_id, don_data in bag.items():
+        if isinstance(don_data, int):
             product = get_object_or_404(Product, pk=don_id)
             total = product.price
             bag_items.append({
