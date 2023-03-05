@@ -5,7 +5,7 @@ from django.conf import settings
 from django.http import JsonResponse, HttpResponse
 
 from .forms import DonateForm
-from .models import Donation, DonTot
+from .models import Donation
 from products.models import Product
 from bag.contexts import bag_contents
 

@@ -23,3 +23,20 @@ def add_to_bag(request, don_id):
 
     request.session['bag'] = bag
     return redirect('checkout')
+
+
+def remove_from_bag(request, don_id):
+    """Remove the item from the bag"""
+    try:
+        product = get_object_or_404(Product, pk=don_id)
+        bag = request.session.get('bag', {})
+        del bag[don_id]
+        bag.pop(don_id)
+        messages.success(request, f'Removed {product.name} from your bag')
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
