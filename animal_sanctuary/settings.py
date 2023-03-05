@@ -55,11 +55,11 @@ INSTALLED_APPS = [
     # Made apps
     'animals',
     'sanctuary_home',
-    'donations',
     'profiles',
     'adoption',
     'products',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [

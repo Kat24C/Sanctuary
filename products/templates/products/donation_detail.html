@@ -15,7 +15,7 @@
                 <h1>{{info.id}}</h1>
                 <img class="card-img-top img-fluid" src="{{ don.image.url }}" alt="{{ don.name }}">
                 <h6 class="text-center">{{ don.description }}</h6>
-                <h6 class="text-center">{{ don.price }}</h6>
+                <h6 class="text-center">{{ don.get_display_price }}</h6>
                 <form class="form" action="{% url 'add_to_bag' don.id %}" method="POST">
                     {% csrf_token %}
                         <div class="col-12 justify-content-center">
@@ -27,7 +27,6 @@
             </div>
         </div>
         {% endfor %}
-
     </div>
 </div>
 {% endblock %}

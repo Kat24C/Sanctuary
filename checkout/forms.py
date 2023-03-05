@@ -1,12 +1,11 @@
-
 from django import forms
-from .models import Order
+from .models import Donation
 
 
-class donationForm(forms.ModelForm):
+class DonateForm(forms.ModelForm):
     class Meta:
-        model = Order
-        fields = ('full_name', 'email')
+        model = Donation()
+        fields = ('full_name', 'email',)
 
     def __init__(self, *args, **kwargs):
         """
