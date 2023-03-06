@@ -2,32 +2,32 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
-
 {% block content %}
-<div class="container pet-print">
-    <h1 class="text-center">Donate</h1>
-    {% for item in bag_items %}
-        <div class="row justify-content-center text-center">
-            <div class="col-6 mb-1">
-                <img class="w-50" src="{{ item.product.image.url }}" alt="{{ product.name }}">
-                <p class="my-0"><strong>{{ item.product.description }}</strong></p>
-                <p class="my-0">{{ item.product.get_display_price }}</p>
+<div class="container-fluid pet-print">
+   <div class="container">
+      <h1 class="text-center">Donate</h1>
+      {% for item in bag_items %}
+      <div class="row justify-content-center text-center">
+         <div class="col-6 mb-1">
+            <img class="w-50" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+            <p class="my-0"><strong>{{ item.product.description }}</strong></p>
+            <p class="my-0">{{ item.product.get_display_price }}</p>
+         </div>
+      </div>
+      {% endfor %}
+      <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+         {% csrf_token %}
+         <fieldset class="text-center">
+            <div class="mt-2">
+               Full name: {{ don_form.full_name }}
             </div>
-        </div>
-    {% endfor %}
-    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-        {% csrf_token %}
-        <fieldset class="text-center">
-                <div class="mt-2">
-                    Full name: {{ don_form.full_name }}
-                </div>
-                <div class="mt-2">
-                    Email: {{ don_form.email }}
-                </div>
-        </fieldset>
-        <fieldset class="px-2">
+            <div class="mt-2">
+               Email: {{ don_form.email }}
+            </div>
+         </fieldset>
+         <fieldset class="px-2">
             <legend class="fieldset-label small text-black px-2 w-auto"></legend>
             <!-- A Stripe card element will go here -->
             <div class="mb-3" id="card-element"></div>
@@ -36,20 +36,21 @@
             <!-- Pass the client secret to the view so we can get the payment intent id -->
             <input type="hidden" value="{{ client_secret }}" name="client_secret">
             <div class="submit-button text-center">
-            <button class="bg-success">Donate</button>
+               <button class="bg-success">Donate</button>
             </div>
-        </fieldset>
-    </form>
+         </fieldset>
+      </form>
+   </div>
+   <div id="loading-overlay">
+      <h1 class="text-light logo-font loading-spinner">
+         <span class="icon">
+         <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+         </span>
+      </h1>
+   </div>
 </div>
-<div id="loading-overlay">
-    <h1 class="text-light logo-font loading-spinner">
-        <span class="icon">
-            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-        </span>
-    </h1>
-</div>
-
 {% endblock %}
+
 {% block postloadjs %}
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}

@@ -8,8 +8,8 @@
 </br>
       <form action="" method="POST">
          {% csrf_token %}
-           <h6>{{ pet_edit.as_p}}</h6>
-           <input type="submit" value="Edit" class="btn-signup">
+           <div class="mb-2">{{ pet_edit|crispy}}</div>
+           <button class="btn btn-outline-info btn-signup" type="submit">Edit</button>
       </form>
 </div>
 

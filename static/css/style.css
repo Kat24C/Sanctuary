@@ -8,21 +8,23 @@ body, html{
 header {
     width: 100%;
     height: 1em;
-    background-color: #885511;
-    position: relative;
-    margin: 0%;
+    position: sticky;
+    padding: 1px;
+    margin-bottom: 3em;
+    z-index:10;
 }
 
 /* Fonts */
 .clr {
-    background-color: #bd8564;
-    height: 2em;
+    background-color: #8adfc2;
+    height: 2.5em;
 }
 
 h1 {
     color:#084e0e;
-    padding-top: 1em;
+    padding-top: 1%;
 }
+
 
 h3 {
     color:#240174;
@@ -36,7 +38,6 @@ table {
 /* Sign-up and Login background */
 .pet-print {
     background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,dn_190,o_32,w_4020/v1677270858/Sanctuary%20project/prints_mvslfo.jpg');
-    width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -52,7 +53,7 @@ table {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(2, 42, 88);
-    margin-top: -35px;
+    margin-top: -4em;
 }
 
 .state {
@@ -137,11 +138,6 @@ table {
     height: 16rem;
 }
 
-.left {
-    margin-left: 5.5em;
-    margin-bottom: 3px;
-}
-
 /* Messages */
 .messages {
     color: #422e9d;
@@ -215,4 +211,11 @@ footer {
         text-size-adjust: smaller;
         justify-content: flex-start;
     }
+
+    h1 {
+        padding-top: 2;
+        padding: 0;
+        font-size: large;
+    }
+
 }

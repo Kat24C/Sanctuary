@@ -33,3 +33,4 @@ class AboutTheAnimal(models.Model):
 
     def animal_id(self):
         return reverse("pet_outline", kwargs={"pk": self.pk})
+

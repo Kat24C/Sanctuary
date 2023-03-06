@@ -3,20 +3,20 @@
 
 {% block content %}
 <div class="container-fluid gray">
-    <div class="container text-center">
-        <h1 class="pt-3">Tell us more</h1>
+    <div class="text-center mt-5">
+        <h1 class="mt-2 pt-2">Tell us more</h1>
         <h3 class="text-dark">What type of pet are you looking for?</h3>
         <form action="{% url 'adoption' %}" method="POST" id="adoption-form">
                 {% csrf_token %}
                 <p>Perspective pet parent: {{ form.perspective_pet_parent }}</p>
                 <p>Your email: {{ form.User_email }}</p>
                 <p>Do you have any other pets: {{ form.other_pets }}</p>
-                <p>What type of pets do you have?: {{ form.please_give_details }}</p>
-                <p>what type of pet are you looking for?: {{ form.what_type_of_pet }}</p>
-                <p>Describe the pet you want: {{ form.pet_you_want }}</p>
+                <p>What type of pets do you have?: </p><p> {{ form.please_give_details }}</p>
+                <p>What pet are you looking for?: {{ form.what_type_of_pet }}</p>
+                <p>Describe the pet you want: </p><p> {{ form.pet_you_want }}</p>
                 <p>Where will the pet be kept: {{ form.where_will_the_pet }}</p>
 
-            <button type="submit" class="btn-primary">Send Email</button>
+            <button type="submit" class="btn-primary mb-2">Send Email</button>
         </form>
     </div>
 </div>
