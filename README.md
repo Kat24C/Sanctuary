@@ -21,7 +21,18 @@ https://animal-sanctuary.herokuapp.com/
 
 ## How to use the app
 ### Before login
-
+ * The user will be able to click on links to get to the animal and about pages. 
+ <img src="https://user-images.githubusercontent.com/98415901/223218511-bed34c7e-0dee-4703-901d-31d6f00dc3d5.JPG" width=50% alt="Home page">
+ * The user will be able search for and look at all the animals.
+ <img src="https://user-images.githubusercontent.com/98415901/223218009-fab22264-c432-4182-92dc-d037687bdf0f.JPG" width=50% alt="Image of the animals page">
+ * The user will be able to read the mission statements and how can you help statements
+ * The user will be able to donate a choosen amount by pressing on the link.
+<img src="https://user-images.githubusercontent.com/98415901/223218621-d4c29ec5-33c9-42fe-9adf-745c7e2b19d0.JPG" width=50% alt="Image of the animals page">
+<img src="https://user-images.githubusercontent.com/98415901/223218766-a15ce38c-7d07-4379-bf7b-b9391db2c5cf.JPG" width=50% alt="Image of the animals page">
+ * Once the user has made a payment they will get a thank you note.
+<img src="https://user-images.githubusercontent.com/98415901/223218900-f17e350c-a2ac-4e6f-8c51-e10346a58512.JPG" width=50% alt="Image of the animals page">
+ * The user will be able to click on the animals to find out more information
+ <img src="https://user-images.githubusercontent.com/98415901/223218086-46e80fe7-91aa-45cf-a288-5d8985aa36ef.JPG" width=50% alt="Facebook page">
 
 ### Signing up
 
