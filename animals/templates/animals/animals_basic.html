@@ -56,4 +56,14 @@
             </div>
         </div>
     </div>
+    <!-- Pagination, so there will only be so many recipes per page -->
+<div class="page_turner">
+    {% if page_num.has_previous %}
+      <a class="page-item text-secondary" href="?page={{ page_num.previous_page_number }}" > Previous &laquo </a>
+    {% endif %}
+    Page: {{ page_num.number }} of {{ page_num.paginator.num_pages }}
+    {% if page_num.has_next %}
+      <a class="page-item text-secondary" href="?page={{ page_num.next_page_number }}">&raquo; Next </a> 
+    {% endif %}
+  </div>
 {% endblock %}

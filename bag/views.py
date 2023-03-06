@@ -40,7 +40,3 @@ def remove_from_bag(request, don_id):
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
-
-
-def error_404_view(request, exception):
-    return render(request, '404.html')

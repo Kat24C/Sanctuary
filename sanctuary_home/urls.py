@@ -8,3 +8,4 @@ urlpatterns = [
     path('edit_mission/<int:info_id>', views.edit_mission, name='edit_mission')
 ]
 
+handler404 = 'sanctuary_home.views.error_404'

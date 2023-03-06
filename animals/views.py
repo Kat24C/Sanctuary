@@ -1,6 +1,7 @@
 from django.shortcuts import render, Http404, get_object_or_404
 from django.shortcuts import reverse, redirect
 from . import models
+from django.core.paginator import Paginator
 from django.views import generic, View
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
@@ -15,9 +16,11 @@ class PetInfo(generic.ListView):
 
 
 def animal_outline(request):
-    pets = models.AboutTheAnimal.objects.all()
+    pets = models.AboutTheAnimal.objects.all().order_by('id')
     query = None
-
+    num = Paginator(pets, 8)
+    page = request.GET.get('page')
+    page_num = num.get_page(page)
     if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
@@ -31,6 +34,7 @@ def animal_outline(request):
     context = {
         'pets': pets,
         'search_term': query,
+        'page_num': page_num,
     }
     return render(request, 'animals/animals_basic.html', context)
 

@@ -82,5 +82,7 @@ def success(request):
     Handle successful checkouts
     """
     messages.success(request, 'Thank you')
+    if 'bag' in request.session:
+        del request.session['bag']
 
     return render(request, 'checkout/success.html')
