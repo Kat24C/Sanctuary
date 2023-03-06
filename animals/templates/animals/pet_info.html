@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid gray">
-  <div class="text-center">
-    <h1 class="head">Animals</h1>
-  </div>
-  <div class="row">
+<div class="container-fluid gray text-center">
+
+    <h1 class="head mt-3">Animals</h1>
+
+  <div class="row cent">
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-      <div class="card h-100 border-0">
+      <div class="card border-0">
         <img class="card-img-top img-fluid" src="{{ pet.featured_image.url }}" alt="{{ pet.animals_name }}">
         <h6>Name: {{ pet.animals_name }} Age: {{ pet.approximate_age }}</h6>
         <h6>Type of animal: {{ pet.type_of_animal }}</h6>
