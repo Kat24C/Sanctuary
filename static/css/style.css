@@ -120,12 +120,9 @@ table {
 }
 
 /* Donate page */
-.amount {
-    width: 15rem;
-}
-
 .image {
-    height: 12rem;
+    height: 15rem;
+    width: 12rem;
 }
 
 
