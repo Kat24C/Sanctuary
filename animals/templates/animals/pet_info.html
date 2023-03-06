@@ -14,8 +14,10 @@
         <h6>Type of animal: {{ pet.type_of_animal }}</h6>
         <h5>All about {{ pet.animal_nickname }}</h5>
         <p>{{ pet.about_the_animal }}</p>
-        <a class="text-muted" href="{% url 'edit_pet' pet.id %}">Edit this pet</a>
-        <a class="text-muted" href="{% url 'delete_pet' pet.id %}">Delete pet</a>
+        {% if user.is_superuser %}
+          <a class="text-muted" href="{% url 'edit_pet' pet.id %}">Edit this pet</a>
+          <a class="text-muted" href="{% url 'delete_pet' pet.id %}">Delete pet</a>
+        {% endif %}
       </div>
     </div>
   </div>
