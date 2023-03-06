@@ -31,6 +31,17 @@ https://animal-sanctuary.herokuapp.com/
 
 ### When the user is logged in 
 
+### Facebook page
+ * I used a mockup facebook page to show an example of the facebook page. I used krita to design it. 
+
+<img src="https://user-images.githubusercontent.com/98415901/223216941-8b73df80-a57e-455a-bad4-f6f7b0c4be43.jpg" width=50% alt="Facebook page">
+
+### Mailchimp
+ * Used pop up link to link mailchimp to the website.
+<img src="https://user-images.githubusercontent.com/98415901/223217264-629c6298-167b-48eb-a0e5-36920065b4e4.JPG" width=50% alt="Facebook page">
+
+<img src="https://user-images.githubusercontent.com/98415901/223217350-757aec05-cae1-4d44-a292-2669729e9685.JPG" width=50% alt="Facebook page">
+
 ## Features
 
  ## Testing
