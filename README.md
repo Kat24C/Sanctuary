@@ -1,15 +1,22 @@
-# Pet Sanctuary
+# Beloved Pet Sanctuary
 Sanctuary is a place to help pets, which uses the Code Institute mock terminal on Heroku to run. 
 
 Users can help by donating towards pets. They can fill out a form to adopt a pet and describe
 what type of pet they are looking for.
 
-website ling
+https://animal-sanctuary.herokuapp.com/
 
-Responsive image
+<img src="https://user-images.githubusercontent.com/98415901/223212804-fc436b06-0840-4a50-a8a8-d38cd3bb94f3.JPG" width=50% alt="responsive design">
 
 ### User stories
-
+ * The staff/superusers will be able to update the mission statement and how can you help statements. 
+ * The staff/superusers will be able to add, update and delete animals as they need adopting or have been adopted.
+ * The user will be able to go through the different animals and decide if they want to adopt an animal.
+ * The user will be able to fill out a form stating if they want to adopt an animal.
+ * The user will be able to search through the different animals using the search bar.
+ * The user will be able to update and change their profiles as they are needed. 
+ * The user will be able to donate a set amount to the cause to help. 
+ * The user will be able to sign up for a daily news letter.
 
 
 ## How to use the app
