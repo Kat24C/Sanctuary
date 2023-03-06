@@ -65,6 +65,7 @@ This project was deployed early using Code Institute's mock terminal for Heroku
   * Click on settings and Go to Convig Vars
   * Set Key to Port and Value to 8000. 
   * Then add my SECRET_KEY - same SECRET_KEY used on env.py
+  * Add Stripe_secret_key and stripe_public_key to convig vars.
   * Then add DISABLE_COLLECTSTATIC for early deployment
   * Click on Deploy at top of page. 
   * Change Deployment method to GitHub. 
@@ -82,3 +83,18 @@ This project was deployed early using Code Institute's mock terminal for Heroku
   * Once the app has launched wait 30 seconds and open your app. 
 
 ## Credits
+ * Code institute for the deployment terminal
+ * Code institute Hello Django and Boutique Ado. 
+ * https://docs.djangoproject.com
+ * https://ordinarycoders.com/blog/article/django-messages-framework
+ * https://learn.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
+ * https://docs.djangoproject.com
+ * https://learn.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
+ * https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html
+ * https://getbootstrap.com/docs/5.2/getting-started/introduction/
+ * Dom Vacchiano - Django tutorial for beginners/Django full stack
+ * Images from https://unsplash.com/, pixabay.com, stock.adobe.com
+ * Slackoverflow for css animation of messages
+ * Followed clevertechie to update navbar. 
+ * Used django-phonenumber-field.readthedocs.io
+ * To do the stripe I followed dennis Ivy, Boutique Ado, Pretty Printed and Django road.
