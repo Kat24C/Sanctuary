@@ -34,13 +34,17 @@ https://animal-sanctuary.herokuapp.com/
  * The user will be able to click on the animals to find out more information
  <img src="https://user-images.githubusercontent.com/98415901/223218086-46e80fe7-91aa-45cf-a288-5d8985aa36ef.JPG" width=50% alt="Facebook page">
 
-### Signing up
-
- 
-### Logout and login
-
+### Signing up, login, logout
+ * The user is able to go to the sign up form, login and logout by going to Profile in the nav link. 
+<img src="https://user-images.githubusercontent.com/98415901/223219808-5c559700-00f2-47f5-b0fe-1d36fe0e6206.JPG" width=50% alt="Facebook page">
 
 ### When the user is logged in 
+ * The user is able to fill out and update their profile. 
+ * The user will be able to send and adoptiong form email.
+
+<img src="https://user-images.githubusercontent.com/98415901/223216941-8b73df80-a57e-455a-bad4-f6f7b0c4be43.jpg" width=50% alt="Facebook page">
+<img src="https://user-images.githubusercontent.com/98415901/223220097-e538c814-a6e3-4e17-8ead-399514ff02fb.JPG" width=50% alt="Email form">
+
 
 ### Facebook page
  * I used a mockup facebook page to show an example of the facebook page. I used krita to design it. 
