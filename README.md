@@ -16,7 +16,7 @@ https://animal-sanctuary.herokuapp.com/
  * The user will be able to search through the different animals using the search bar.
  * The user will be able to update and change their profiles as they are needed. 
  * The user will be able to donate a set amount to the cause to help. 
- * The user will be able to sign up for a daily news letter.
+ * The user will be able to sign up for a monthly news letter.
 
 
 ## How to use the app
@@ -36,6 +36,14 @@ https://animal-sanctuary.herokuapp.com/
  ## Testing
  
  ### User story testing
+ * The staff/superusers are able to update the mission statement and how can you help statements by logging in and clicking on the edit the statement link, which will take them to a new page where they can update the user story. 
+ * The staff/superusers are able to add a new animal by going to the add me link in animals, update the animals by clicking on the know more link where they will then find a edit or delete button, which will take them to another page..
+ * The user are able to go through the different animals and decide if they want to adopt an animal by clicking on the animal link.
+ * The user are able to fill out a form stating if they want to adopt an animal, by clicking on the adoption link, logging in and filling out the form. This will send an email to the staff members.
+ * The user are able to search through the different animals using the search bar at the top in the navbar.
+ * The user are able to update and change their profiles by logging in clicking on profile and updating what is needed, then clicking Update Information to save the changes. 
+ * The users are able to donate a set amount by clicking on donation and choosing what they want to donate. This will then take them to another page where they can fill in their card details, if successful it takes them to a thank you page. 
+ * The user are able to sign up for a monthly news letter by clicking on the pop up and filling in their email.
 
 
 
