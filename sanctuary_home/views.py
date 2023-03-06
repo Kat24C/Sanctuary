@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from . import models
+from django.conf import settings
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
 from .forms import MissionForm
@@ -45,3 +46,4 @@ def edit_mission(request, info_id):
     }
 
     return render(request, 'sanctuary_home/staff_form.html', context)
+

@@ -1,4 +1,5 @@
-from django.shortcuts import render, Http404, get_object_or_404, redirect, reverse
+from django.shortcuts import render, Http404, get_object_or_404
+from django.shortcuts import reverse, redirect
 from . import models
 from django.views import generic, View
 from django.db.models import Q
@@ -124,3 +125,4 @@ def delete_pet(request, pet_id):
     }
 
     return render(request, 'animals/delete_pet.html', context)
+
