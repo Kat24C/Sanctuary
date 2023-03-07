@@ -28,8 +28,8 @@ def adoption(request):
     profile = Profile.objects.all()
     if request.method == 'POST':
         form = AdoptionDetails(request.POST)
-        if form.is_valid(): 
-            form1 = ProfileForm()
+        if form.is_valid():
+            form1 = ProfileForm(POST)
             subject = "Adoption Details"
             adoption = {
                 'first_name': form1.cleaned_data['first_name'],
