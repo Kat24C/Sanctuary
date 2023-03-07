@@ -32,7 +32,7 @@ def animal_outline(request):
             pets = pets.filter(queries)
 
     context = {
-        'pets': pets,
+        'pets': page_num,
         'search_term': query,
         'page_num': page_num,
     }
