@@ -14,6 +14,13 @@ header {
     z-index:10;
 }
 
+footer {
+    margin-bottom: 2.5em;
+    font-weight: bold;
+    font-size: large;
+    color: #3dad91;
+}
+
 .drop {
     background: rgba(160,215,223,0.5);
     color:#000000;
@@ -35,6 +42,7 @@ h3 {
     color:#240174;
     font-family: Geneva, Tahoma, sans-serif;
 }
+
 
 table {
     overflow-x: auto;
