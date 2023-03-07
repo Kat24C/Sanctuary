@@ -14,6 +14,12 @@ header {
     z-index:10;
 }
 
+.drop {
+    background: rgba(160,215,223,0.5);
+    color:#000000;
+    font-size: medium;
+}
+
 /* Fonts */
 .clr {
     background-color: #8adfc2;
