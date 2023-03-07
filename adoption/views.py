@@ -32,7 +32,7 @@ def adoption(request):
             form1 = ProfileForm(request.POST)
             subject = "Adoption Details"
             adoption = {
-                'first_name': form1.cleaned_data['first_name'],
+                'first_name': form1['first_name'],
                 'perspective_pet_parent': form.cleaned_data['perspective_pet_parent'],
                 'User_email': form.cleaned_data['User_email'],
                 'other_pets': form.cleaned_data['other_pets'],
