@@ -11,8 +11,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.core.mail import send_mail
 
 from . import models
-from profiles.models import Profile
-from profiles.forms import ProfileForm
+
 
 # Create your views here.
 @login_required
@@ -25,18 +24,18 @@ class AdoptionInfo(generic.ListView):
 @login_required
 def adoption(request):
     adoption = models.AdoptionQuestion.objects.all()
-    profile = Profile.objects.all()
     if request.method == 'POST':
         form = AdoptionDetails(request.POST)
         if form.is_valid():
-            form1 = ProfileForm(request.POST)
             subject = "Adoption Details"
             adoption = {
-                'first_name': form1['first_name'],
-                'perspective_pet_parent': form.cleaned_data['perspective_pet_parent'],
+                'perspective_pet_parent':
+                form.cleaned_data['perspective_pet_parent'],
                 'User_email': form.cleaned_data['User_email'],
+                'phone_number': form.cleaned_data['phone_number'],
                 'other_pets': form.cleaned_data['other_pets'],
-                'please_give_details': form.cleaned_data['please_give_details'],
+                'please_give_details':
+                form.cleaned_data['please_give_details'],
                 'what_type_of_pet': form.cleaned_data['what_type_of_pet'],
                 'pet_you_want': form.cleaned_data['pet_you_want'],
                 'where_will_the_pet': form.cleaned_data['where_will_the_pet'],

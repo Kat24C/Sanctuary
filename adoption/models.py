@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 
 
@@ -30,6 +31,7 @@ class AdoptionQuestion(models.Model):
     perspective_pet_parent = models.CharField(max_length=70, null=True,
                                               blank=True)
     User_email = models.EmailField(max_length=70, blank=True, unique=True)
+    phone_number = PhoneNumberField(blank=True, unique=True)
     other_pets = models.CharField(max_length=10,
                                   choices=YesNo,
                                   blank=True)

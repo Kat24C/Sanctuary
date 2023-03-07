@@ -1,6 +1,5 @@
 from django import forms
 from .models import Profile
-from phonenumber_field.formfields import PhoneNumberField
 
 
 class ProfileForm(forms.ModelForm):
@@ -16,7 +15,6 @@ class ProfileForm(forms.ModelForm):
         placeholders = {
             'first_name': 'First name',
             'surname': 'Surname',
-            'phone_number': 'Phone number',
             'street_address1': 'Street Address',
             'street_address2': 'Street Address',
             'town_or_city': 'Town or City',

@@ -27,4 +27,3 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('bag/', include('bag.urls')),
 ]
-
