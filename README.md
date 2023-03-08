@@ -75,12 +75,30 @@ https://animal-sanctuary.herokuapp.com/
 
 ## Bugs
 ### Solved Bugs
- 
+ * When searching for a type of animal it was not working. 
+   * I fixed this by adding a search_animals views and url for search_animals.
+ * When paying for a donation, the previous payment stayed in the bag/ 
+   * I fixed this by adding: if 'bag' in request.session:
+         del request.session['bag']
+ * When signing up, there was a 500 error.
+   * This was fixed by removing the phone_number link in profile as it was picking up 2 number. 
+ * My custom 404 was not being picked up. 
+   * This was fixed by removing the url and view handler and adding the 404.html to base template instead of the root directory.
  
 ### Remaining Bugs
-
+ * There are no remaining bugs. 
 
 ### Validator Testing
+ * By running my project through lighthouse in devtool, I confirmed that the colours and fonts are easy to read and accessible. 
+ * CSS
+   * No errors were found when running the css code through jigsaw W3C code validator
+ * HTML
+   * No errors were found when running the html code through validator W3
+* Python
+  * Ran linter in gitpod, had 2 long lines in settings which were imported when I installed django. 
+  * Ran automated testing using tests.py = test_models
+* Accessibility
+  * By running my project through lighthouse in devtool, I confirmed that the colours and fonts are easy to read and accessible. 
 
 
 ## Deployment
@@ -123,4 +141,5 @@ This project was deployed early using Code Institute's mock terminal for Heroku
  * Slackoverflow for css animation of messages
  * Followed clevertechie to update navbar. 
  * Used django-phonenumber-field.readthedocs.io
- * To do the stripe I followed dennis Ivy, Boutique Ado, Pretty Printed and Django road.
+ * For stripe payment I followed dennis Ivy, Boutique Ado, Pretty Printed and Django road.
+ * Codemy - Create a search bar.
