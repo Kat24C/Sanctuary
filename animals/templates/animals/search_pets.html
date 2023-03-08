@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <!-- Searches through the animals and shows the animals -->
-    <div class="container pet-print"> 
-        {% if search %}
-            <h1>You searched for {{ search }}</h1>
-    <div class="container pet-prints">    
-            <h3 class="center">Showing results: </h3>
-         {% for pet in sanimals %}
-            <h3><a href="{% url 'pet_info' pet.id %}">{{ pet.animals_name }} {{ pet.type_of_animal }}</a></h3>
-        {% endfor %} 
-        <br/>
-        <br/>
-        <p>If no results, please return to <a href="{% url 'animal_outline' %}">Animal home page</a> </p>      
-        {% else %}
-            <h3>Please search for a type of animals or return to 
-                <a href="{% url 'animal_outline' %}">animals.</a></h3>
-        {% endif %}
-    </div>
+<!-- Searches through the animals and shows the animals -->
+<div class="container pet-print">
+   {% if search %}
+   <h1>You searched for {{ search }}</h1>
+   <div class="container pet-prints">
+       <h3 class="center">Showing results: </h3>
+       {% for pet in sanimals %}
+       <h3><a href="{% url 'pet_info' pet.id %}">{{ pet.animals_name }} {{ pet.type_of_animal }}</a></h3>
+       {% endfor %} 
+       <br/>
+       <p>If no results, please return to <a href="{% url 'animal_outline' %}">Animal home page</a> </p>
+       {% else %}
+       <h3>Please search for a type of animals or return to 
+           <a href="{% url 'animal_outline' %}">animals.</a>
+       </h3>
+       {% endif %}
+   </div>
+</div>
 {% endblock content %}
