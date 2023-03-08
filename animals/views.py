@@ -3,7 +3,6 @@ from django.shortcuts import reverse, redirect
 from . import models
 from django.core.paginator import Paginator
 from django.views import generic, View
-from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .forms import PetDetails
 from django.contrib import messages
@@ -21,15 +20,6 @@ def animal_outline(request):
     num = Paginator(pets, 8)
     page = request.GET.get('page')
     page_num = num.get_page(page)
-    if request.GET:
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('pet_info'))
-
-            queries = Q(type_of_animal__icontains=query)
-            pets = pets.filter(queries)
 
     context = {
         'pets': page_num,
@@ -130,3 +120,13 @@ def delete_pet(request, pet_id):
 
     return render(request, 'animals/delete_pet.html', context)
 
+
+def search_animals(request):
+    search = request.GET.get('search', '')
+    if search:
+        sanimals = models.AboutTheAnimal.objects.filter(type_of_animal__icontains=search)
+        return render(request, 'animals/search_pets.html', {
+            'search': search, 'sanimals': sanimals})
+    else:
+        return render(request, 'animals/search_pets.html', {})
+        messages.error(request, "You didn't enter any search criteria!")
