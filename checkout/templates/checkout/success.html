@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid text-center prints">
-        <div class="pt-5">
-            <img src="https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_1403/v1677619211/Sanctuary%20project/thank_you_o5cr36.jpg" width="40%">
-            <h4>Thank you for supporting our furry and feathered friends.</h4>
-            <div class="meet-animal mx-auto text-center pt-2">
-                <a href="{% url 'home_pg' %}" >
-                    Return to the home page.
-                </a>
-            </div>
-        </div>
+<!-- A success message sent to the user once paid -->
+<div class="container-fluid text-center prints">
+    <div class="pt-5">
+       <img src="https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_1403/v1677619211/Sanctuary%20project/thank_you_o5cr36.jpg" width="40%">
+       <h4>Thank you for supporting our furry and feathered friends.</h4>
+       <div class="meet-animal mx-auto text-center pt-2">
+          <a href="{% url 'home_pg' %}" >
+          Return to the home page.
+          </a>
+       </div>
     </div>
-
+ </div>
 {% endblock %}

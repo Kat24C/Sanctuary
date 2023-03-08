@@ -1,17 +1,19 @@
 {% block content %}
-    <div class="container-fluid prints">
-        <div class="mt-3 mb-3">
-            <div class="card">                   
-                <header class="card-header bg-brown">
-                    <h1 class="ml-5">Page Not Found <i class="fa-regular fa-face-disappointed"></i></h1>
-                </header>                   
-                <div class="card-body p-4">
-                    <h2 class="mb-3">On no</h2>
-                    <p>Something has gone wrong, Please</p>  
-                    <a href="{% url 'home_pg' %}" class="btn btn-primary btn-large mb-3">Return to the Home Page</a>
-                    <img src="https://res.cloudinary.com/katgacoop/image/upload/c_scale,h_504/v1678144053/sad-pet_hsjsdm.jpg" alt="Sad pet">
-                <div class="card-footer bg-brown"></div>
-            </div>
-        </div>
-    </div>   
+<!-- A 404 page if page not found error -->
+<div class="container-fluid prints">
+    <div class="mt-3 mb-3">
+       <div class="card justify-content-center">
+          <img src="https://res.cloudinary.com/katgacoop/image/upload/c_scale,h_504/v1678144053/sad-pet_hsjsdm.jpg" alt="Sad pet">                 
+          <header class="card-header bg-brown">
+             <h1 class="ml-5">Page Not Found <i class="fa-regular fa-face-disappointed"></i></h1>
+          </header>
+          <div class="card-body p-4">
+             <h2 class="mb-3">On no</h2>
+             <p>Something has gone wrong, Please</p>
+             <a href="{% url 'home_pg' %}" class="btn btn-primary btn-large mb-3">Return to the Home Page</a>
+             <div class="card-footer bg-brown"></div>
+          </div>
+       </div>
+    </div>
+</div>
 {% endblock %}

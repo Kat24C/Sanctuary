@@ -10,60 +10,62 @@
 {% endblock %}
 
 {% block content %}
+<!-- Basic information about the pets -->
 <div class="container-fluid gray">
     <div class="row">
-        <div class="col text-center">
-            <h1>Animals</h1>
-            <div class="row">
-                <div class="col-8 offset-1">
-                    <div class="row mt-1 mb-2"></div>
-                    <div class="row">
-                        {% for pet in pets %}
-                        <div class="size col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card border-0">
-                                <img class="card-img-top image1" src="{{ pet.featured_image.url }}" alt="{{ pet.animals_name }}">
-                                <div class="pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6 class="text-center">Name: {{ pet.animals_name }}</h6>
-                                            <h6 class="text-center">Type of animal: {{ pet.type_of_animal }}</h6>
-                                            <a href="{% url 'pet_info' pet.id %}">Know more</a>
-                                        </div>
-                                    </div>
-                                </div>
+       <div class="col text-center">
+          <h1>Animals</h1>
+          <div class="row">
+             <div class="col-8 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                   {% for pet in pets %}
+                   <div class="size col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                      <div class="card border-0">
+                         <img class="card-img-top image1" src="{{ pet.featured_image.url }}" alt="{{ pet.animals_name }}">
+                         <div class="pt-0 border-0 text-left">
+                            <div class="row">
+                               <div class="col">
+                                  <h6 class="text-center">Name: {{ pet.animals_name }}</h6>
+                                  <h6 class="text-center">Type of animal: {{ pet.type_of_animal }}</h6>
+                                  <a href="{% url 'pet_info' pet.id %}">Know more</a>
+                               </div>
                             </div>
-                        </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                        <div class="col-12 d-sm-none mb-5">
-                            <hr>
-                        </div>
-                        {% endif %} {% if forloop.counter|divisibleby:2 %}
-                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            <hr>
-                        </div>
-                        {% endif %} {% if forloop.counter|divisibleby:3 %}
-                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                            <hr>
-                        </div>
-                        {% endif %} {% if forloop.counter|divisibleby:4 %}
-                        <div class="col-12 d-none d-xl-block mb-5">
-                            <hr>
-                        </div>
-                        {% endif %} {% endfor %} {% if user.is_superuser %}
-                        <a href="{% url 'add_pet' %}">Add a new pet</a> {% endif %}
-                    </div>
+                         </div>
+                      </div>
+                   </div>
+                   {% if forloop.counter|divisibleby:1 %}
+                   <div class="col-12 d-sm-none mb-5">
+                      <hr>
+                   </div>
+                   {% endif %} {% if forloop.counter|divisibleby:2 %}
+                   <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                      <hr>
+                   </div>
+                   {% endif %} {% if forloop.counter|divisibleby:3 %}
+                   <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                      <hr>
+                   </div>
+                   {% endif %} {% if forloop.counter|divisibleby:4 %}
+                   <div class="col-12 d-none d-xl-block mb-5">
+                      <hr>
+                   </div>
+                   {% endif %} {% endfor %} {% if user.is_superuser %}
+                   <a href="{% url 'add_pet' %}">Add a new pet</a> {% endif %}
                 </div>
-            </div>
-                <!-- Pagination, so there will only be so many recipes per page -->
-        <div class="page_turner">
-            {% if page_num.has_previous %}
-            <a class="page-item text-secondary" href="?page={{ page_num.previous_page_number }}" > Previous &laquo </a>
-            {% endif %}
-            Page: {{ page_num.number }} of {{ page_num.paginator.num_pages }}
-            {% if page_num.has_next %}
-            <a class="page-item text-secondary" href="?page={{ page_num.next_page_number }}">&raquo; Next </a> 
-            {% endif %}
-        </div>
-        </div>
+             </div>
+          </div>
+          <!-- Pagination, so there will only be so many recipes per page -->
+          <div class="page_turner">
+             {% if page_num.has_previous %}
+             <a class="page-item text-secondary" href="?page={{ page_num.previous_page_number }}" > Previous &laquo </a>
+             {% endif %}
+             Page: {{ page_num.number }} of {{ page_num.paginator.num_pages }}
+             {% if page_num.has_next %}
+             <a class="page-item text-secondary" href="?page={{ page_num.next_page_number }}">&raquo; Next </a> 
+             {% endif %}
+          </div>
+       </div>
     </div>
+</div>
 {% endblock %}

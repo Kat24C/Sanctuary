@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 {% load crispy_forms_tags %}
-
 <!-- Form to update -->
 <div class="container-fluid text-center prints">
    <h1>Update Animal</h1>
-</br>
-      <form action="" method="POST">
-         {% csrf_token %}
-           <div class="mb-2">{{ pet_edit|crispy}}</div>
-           <button class="btn btn-outline-info btn-signup" type="submit">Edit</button>
-      </form>
+   </br>
+   <form action="" method="POST">
+      {% csrf_token %}
+      <div class="mb-2">{{ pet_edit|crispy}}</div>
+      <button class="btn btn-outline-info btn-signup" type="submit">Edit</button>
+   </form>
 </div>
-
 {% endblock content %}

@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 {% load crispy_forms_tags %}
-
 <!-- Asking the question to delete instead of just deleting -->
 <div class="container-fluid text-center pet-pic">
 </br>
-<h1>You are about to delete {{ pet.animals_name }}</h1>
+   <h1>You are about to delete {{ pet.animals_name }}</h1>
    <form method="POST" style="margin-top: 1.3em;">
       {% csrf_token %}
       <input type="submit" value="Delete" class="btn-sign"></input>
       <button  class="btn-signs"><a href="{% url 'animal_outline' %}">No go back</a></button>
-          
    </form>
-</div>   
-
+</div>
 {% endblock content %}

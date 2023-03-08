@@ -2,22 +2,27 @@
 {% load static %}
 
 {% block content %}
+<!-- A full page to show all the information about the individual animals -->
 <div class="container-fluid gray text-center">
-    <h1 class="head mt-3">Animals</h1>
+  <h1 class="head mt-3">Animals</h1>
   <div class="row cent">
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-      <div class="card border-0">
-        <img class="card-img-top img-fluid" src="{{ pet.featured_image.url }}" alt="{{ pet.animals_name }}">
-        <h6>Name: {{ pet.animals_name }} Age: {{ pet.approximate_age }}</h6>
-        <h6>Type of animal: {{ pet.type_of_animal }}</h6>
-        <h5>All about {{ pet.animal_nickname }}</h5>
-        <p>{{ pet.about_the_animal }}</p>
-        {% if user.is_superuser %}
-          <a class="text-muted" href="{% url 'edit_pet' pet.id %}">Edit this pet</a>
-          <a class="text-muted" href="{% url 'delete_pet' pet.id %}">Delete pet</a>
-        {% endif %}
-      </div>
-    </div>
+     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div class="card border-0">
+           <img class="card-img-top img-fluid" src="{{ pet.featured_image.url }}" alt="{{ pet.animals_name }}">
+           <h6>Name: {{ pet.animals_name }} Age: {{ pet.approximate_age }}</h6>
+           <h6>Type of animal: {{ pet.type_of_animal }}</h6>
+           <h5>All about {{ pet.animal_nickname }}</h5>
+           <p>{{ pet.about_the_animal }}</p>
+           </br>
+           <a href="{% url 'animal_outline' %}" class="btn btn-info">
+           <i class="fa-solid fa-paw"></i> Return to all the animals 
+           </a>
+           {% if user.is_superuser %}
+           <a class="text-muted" href="{% url 'edit_pet' pet.id %}">Edit this pet</a>
+           <a class="text-muted" href="{% url 'delete_pet' pet.id %}">Delete pet</a>
+           {% endif %}
+        </div>
+     </div>
   </div>
 </div>
 {% endblock %}

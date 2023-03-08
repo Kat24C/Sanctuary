@@ -2,55 +2,56 @@
 {% load static %}
 
 {% block content %}
+<!-- Donation page, where the user can choose what to donate -->
 <div class="container-fluid gray">
-        <div class="col text-center mt-3">
-            <h1 class="pt-3 mt-4">Donation</h1>
-                <div class="col-8 offset-1">
-                    <div class="row">
-                {% for don in product %}
-                    <div class="size col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card border-0">
-                            <img class="card-img-top image" src="{{ don.image.url }}" alt="{{ don.name }}">
-                            <div class="pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 class="text-center">{{ don.description }}</h6>
-                                        <h6 class="text-center">{{ don.get_display_price }}</h6>
-                                        <form class="form" action="{% url 'add_to_bag' don.id %}" method="POST">
-                                            {% csrf_token %}
-                                                <div class="col-6">
-                                                    <input type="submit" class="text-uppercase text-center" value="Donate">
-                                                </div>
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:1 %}
-                        <div class="col-12 d-sm-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}                        
-                    {% if forloop.counter|divisibleby:2 %}
-                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 %}
-                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 %}
-                        <div class="col-12 d-none d-xl-block mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
+    <div class="col text-center mt-3">
+       <h1 class="pt-3 mt-4">Donation</h1>
+       <div class="col-8 offset-1">
+          <div class="row">
+             {% for don in product %}
+             <div class="size col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-0">
+                   <img class="card-img-top image" src="{{ don.image.url }}" alt="{{ don.name }}">
+                   <div class="pt-0 border-0 text-left">
+                      <div class="row">
+                         <div class="col">
+                            <h6 class="text-center">{{ don.description }}</h6>
+                            <h6 class="text-center">{{ don.get_display_price }}</h6>
+                            <form class="form" action="{% url 'add_to_bag' don.id %}" method="POST">
+                               {% csrf_token %}
+                               <div class="col-6">
+                                  <input type="submit" class="text-uppercase text-center" value="Donate">
+                               </div>
+                               <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </form>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             {% if forloop.counter|divisibleby:1 %}
+             <div class="col-12 d-sm-none mb-5">
+                <hr>
+             </div>
+             {% endif %}                        
+             {% if forloop.counter|divisibleby:2 %}
+             <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <hr>
+             </div>
+             {% endif %}
+             {% if forloop.counter|divisibleby:3 %}
+             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <hr>
+             </div>
+             {% endif %}
+             {% if forloop.counter|divisibleby:4 %}
+             <div class="col-12 d-none d-xl-block mb-5">
+                <hr>
+             </div>
+             {% endif %}
+             {% endfor %}
+          </div>
+       </div>
     </div>
-</div>
+ </div>
 {% endblock %}
