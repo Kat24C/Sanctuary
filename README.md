@@ -94,11 +94,14 @@ https://animal-sanctuary.herokuapp.com/
    * No errors were found when running the css code through jigsaw W3C code validator
  * HTML
    * No errors were found when running the html code through validator W3
+   <img src="" width=50% alt="HTML Validator">
 * Python
   * Ran linter in gitpod, had 2 long lines in settings which were imported when I installed django. 
   * Ran automated testing using tests.py = test_models
 * Accessibility
   * By running my project through lighthouse in devtool, I confirmed that the colours and fonts are easy to read and accessible. 
+  
+<img src="https://user-images.githubusercontent.com/98415901/223768862-aa79ab9a-3f5a-4364-bae4-456131dca481.JPG" width=50% alt="Lighthouse">
 
 
 ## Deployment
