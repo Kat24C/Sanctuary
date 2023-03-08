@@ -92,16 +92,19 @@ https://animal-sanctuary.herokuapp.com/
  * By running my project through lighthouse in devtool, I confirmed that the colours and fonts are easy to read and accessible. 
  * CSS
    * No errors were found when running the css code through jigsaw W3C code validator
+   * <img src="https://user-images.githubusercontent.com/98415901/223789281-36d0e7f6-731d-4e07-9407-7de02ba14e47.JPG" width=50% alt="CSS Validator">
  * HTML
    * No errors were found when running the html code through validator W3
-   <img src="" width=50% alt="HTML Validator">
+   <img src="https://user-images.githubusercontent.com/98415901/223789180-888cd6c2-d6fb-4bc7-9655-e2d731f1e098.JPG" width=50% alt="HTML Validator">
 * Python
-  * Ran linter in gitpod, had 2 long lines in settings which were imported when I installed django. 
+  * Ran linter in gitpod, have long lines in settings which were imported when I installed django. 
   * Ran automated testing using tests.py = test_models
 * Accessibility
   * By running my project through lighthouse in devtool, I confirmed that the colours and fonts are easy to read and accessible. 
   
 <img src="https://user-images.githubusercontent.com/98415901/223768862-aa79ab9a-3f5a-4364-bae4-456131dca481.JPG" width=50% alt="Lighthouse">
+
+
 
 
 ## Deployment
