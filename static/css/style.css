@@ -22,9 +22,9 @@ footer {
 }
 
 .drop {
-    background: rgba(160,215,223,0.5);
+    background: rgba(10, 245, 194, 0.7);
     color:#000000;
-    font-size: medium;
+    font-weight: bold;
 }
 
 /* Fonts */
@@ -202,9 +202,9 @@ footer {
         margin-top: 1rem;
     }
     .state {
-        background-color: rgba(204, 201, 178, 0.4);
+        background-color: rgba(2, 30, 48, 0.4);
         color: #000000;
-        font-weight: 500;
+        font-weight: bolder;
         margin-left: 0;
     }
 
