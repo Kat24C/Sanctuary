@@ -151,6 +151,10 @@ table {
     height: 16rem;
 }
 
+.length {
+    max-width: 15em;
+}
+
 /* Messages */
 .messages {
     color: #422e9d;
