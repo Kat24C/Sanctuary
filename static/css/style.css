@@ -35,6 +35,7 @@ footer {
 
 h1 {
     color:#084e0e;
+    padding-top: 1em;
 }
 
 
@@ -126,6 +127,14 @@ table {
     color:#241803;
 }
 
+.detail {
+    max-width: 30em;
+}
+
+.margin {
+    margin-left: 12em;
+}
+
 /* Animal page background images */
 .prints {
     background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_2310/v1678284343/Sanctuary%20project/footprints_j0elzb.webp');
@@ -158,8 +167,8 @@ table {
 /* Messages */
 .messages {
     color: #422e9d;
-    text-align: center;
-    padding-top: 1em;
+    text-align: left;
+    margin-left: 5em;
     padding-bottom: 1em;
     font-size: large;
 }
