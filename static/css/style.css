@@ -50,7 +50,7 @@ table {
 
 /* Sign-up and Login background */
 .pet-print {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,dn_190,o_32,w_4020/v1677270858/Sanctuary%20project/prints_mvslfo.jpg');
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,o_38,w_3077/v1678283907/Sanctuary%20project/prints_w4gy3o.webp');
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,7 +60,7 @@ table {
 
 /* Home page background image */
 .bg-image {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_1834/v1676208687/animal_tuoiy9.jpg');
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1678284072/Sanctuary%20project/animal_mogl2w.webp');
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -93,7 +93,7 @@ table {
 
 /* Animal page background images */
 .gray {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_2834/v1675799492/Sanctuary%20project/background_paw_prints_mbdtg6.jpg');
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1678284171/Sanctuary%20project/background_paw_prints_s5uieh.webp');
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -103,7 +103,7 @@ table {
 }
 
 .pet-pic {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1677270026/Sanctuary%20project/animals_yaikmx.jpg');
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1678284258/Sanctuary%20project/animals_mnl9la.webp');
     width: 80%;
     height: 100%;
     background-repeat: no-repeat;
@@ -128,7 +128,7 @@ table {
 
 /* Animal page background images */
 .prints {
-    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1676767076/Sanctuary%20project/footprints_eukszr.jpg');
+    background-image: url('https://res.cloudinary.com/katgacoop/image/upload/c_scale,w_2310/v1678284343/Sanctuary%20project/footprints_j0elzb.webp');
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -193,7 +193,7 @@ footer {
 /* Change of media screen */
 @media (max-width: 800px) {
     .bg-image {
-        background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1677270026/Sanctuary%20project/animals_yaikmx.jpg');
+        background-image: url('https://res.cloudinary.com/katgacoop/image/upload/v1678284258/Sanctuary%20project/animals_mnl9la.webp');
         width: auto;
         height: 100%;
         background-repeat: no-repeat;
