@@ -22,7 +22,7 @@ footer {
 }
 
 .drop {
-    background: rgba(10, 245, 194, 0.7);
+    background: rgba(181, 226, 207, 0.7);
     color:#000000;
     font-weight: bold;
 }
@@ -202,7 +202,7 @@ footer {
         margin-top: 1rem;
     }
     .state {
-        background-color: rgba(2, 30, 48, 0.4);
+        background-color: rgba(174, 231, 214, 0.7);
         color: #000000;
         font-weight: bolder;
         margin-left: 0;

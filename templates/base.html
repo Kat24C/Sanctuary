@@ -47,10 +47,10 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                <ul class="nav navbar-nav drop">
                <li class="nav-item list-inline-item dropdown">
-                  <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link" href="{% url 'home_pg' %}" id="user-home" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <p class="my-0"> Home <i class="fa-regular fa-list-dropdown"></i> </p>
                   </a>
-                  <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                  <div class="dropdown-menu border-0" aria-labelledby="user-home">
                      <a class="nav-link" href="{% url 'home_pg' %}">Home Page</a>
                      <a class="nav-link" href="{% url 'animals_home_pg' %}">About</a>
                   </div>
