@@ -16,7 +16,7 @@
                       <div class="row">
                          <div class="col">
                             <h6 class="text-center">{{ don.description }}</h6>
-                            <h6 class="text-center">{{ don.get_display_price }}</h6>
+                            <h6 class="text-center">€{{ don.get_display_price }}</h6>
                             <form class="form" action="{% url 'add_to_bag' don.id %}" method="POST">
                                {% csrf_token %}
                                <div class="col-6">
